@@ -1,0 +1,1703 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#">
+<head>
+<!-- Meta Tags -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <title>Genialos - Året der gik, og året der kommer. (1) - Radio24syv | Arkiv</title>
+
+
+
+    
+
+  <!-- Style + Script (import) (layout block #3934702, liquid) -->
+<link rel="stylesheet" type="text/css" href="http://www.radio24syv.dk/css/combined_74B53CDEA72BB436DB5C79B541A36198.css">
+
+
+<!-- html5shim (layout block #4078295, liquid) -->
+
+  <!--[if lt IE 9]> <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+
+
+
+<!-- ht stuff -->
+
+<link rel="stylesheet" href="circleplayer.css" type="text/css" media="screen" />   
+  <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+  
+  <!-- Magick -->      
+  
+  <!-- Move jQuery Local! -->
+     
+  <script type="text/javascript" src="js/jquery.min.js"></script>  
+  <script type="text/javascript" src="js/jquery.rotate.js"></script>
+  <script type="text/javascript" src="js/jquery.grab.js"></script> 
+  <script type="text/javascript" src="js/jquery.jplayer.js"></script>      
+  <script type="text/javascript" src="js/mod.csstransforms.min.js"></script>
+  <script type="text/javascript" src="js/popcorn.js"></script> 
+  <script type="text/javascript" src="js/popcorn.transcript.js"></script>  
+  
+  <script type="text/javascript">
+  $(document).ready(function(){    
+    
+    var cssTransforms = Modernizr.csstransforms;
+    
+      var myPlayer = $("#jquery_jplayer_1");        
+  
+  
+    // Utility
+
+    function getUrlVars() {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for(var i = 0; i < hashes.length; i++)
+        {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }  
+
+    // url links to audio  
+
+
+    var endTime = getUrlVars()["e"];
+
+    if (getUrlVars()["e"] != null) { 
+      endTime = parseInt(getUrlVars()["e"])/10;
+    }
+  
+    myPlayer.jPlayer({
+      ready: function (event) {
+              $(this).jPlayer("setMedia", {
+                mp3: "http://arkiv.radio24syv.dk/1984082/4209798/1d38c04c82d6c5bf496ecd61c2a6c504/audio/ak-24syv-2.mp3"  
+
+          // shorter files - useful for testing
+ 
+          /*mp3 : "http://www.jplayer.org/audio/mp3/TSP-13-Shmoort.mp3",
+                    oga : "http://www.jplayer.org/audio/ogg/TSP-13-Shmoort.ogg"*/
+              });   
+        if(event.jPlayer.html.used && event.jPlayer.html.audio.available) {
+          initPopcorn('#' + $(this).data("jPlayer").internal.audio.id);
+        }
+          }, 
+        
+      solution: "html, flash",
+          swfPath: "js",
+          supplied: "mp3"
+            //errorAlerts: "true",
+      //warningAlerts: "true"
+        });
+   
+
+    
+    function initPopcorn(id) {   
+      var p = Popcorn(id);  
+      
+      $("#transcript-content span").each(function(i) {  
+        p.transcript({
+          time: $(this).attr("m") / 1000, // seconds
+          futureClass: "transcript-grey",
+          target: this
+        });  
+      }); 
+    };
+
+    function checkStartParam() {
+      if (getUrlVars()["s"] != null) {    
+        var s = parseInt(getUrlVars()["s"])/10;    
+
+        if (lang == 'en') {  
+            playerEn.jPlayer("play",s);    
+        } else {        
+          playerDa.jPlayer("play",s);
+        }
+      }
+    }
+
+    // These events are fired as play time increments  
+
+    var playingWord = 1;
+
+    myPlayer.bind($.jPlayer.event.timeupdate, function(event) {       
+
+      playTimeEn = event.jPlayer.status.currentPercentAbsolute;  
+      currentTime = event.jPlayer.status.currentTime; 
+
+      // Check for end param         
+
+      if (endTime != null && endTime < currentTime) {
+          myPlayer.jPlayer("pause");   
+        endTime = null;
+      }
+    });     
+    
+    
+    // transcript links to audio
+
+    $('#transcript').delegate('span','click',function(){  
+      var jumpTo = $(this).attr('m')/1000; 
+
+      myPlayer.jPlayer("play",jumpTo);    
+       
+      return false;
+    });
+
+ 
+
+    });    
+
+
+
+
+  </script>  
+
+<!-- end ht stuff -->
+
+
+</head>
+
+
+<body id="video-one">
+
+  <!-- Header (import) (layout block #3934696, liquid) -->
+<header id="main-header">
+<div class="content">
+    <div id="logo"><a href="http://www.radio24syv.dk/" title="Gå til forside af Radio24syv"><img src="http://www.radio24syv.dk/css/images/logo.png" alt="Radio24syv" width="203" height="85"></a>
+    </div>
+    <nav id="nav-box"><ul>
+    <li class="programs"><a href="http://www.radio24syv.dk/">Programoversigt</a></li><li class="search">
+    <a href="http://www.radio24syv.dk/">Søg</a><div class="search-form">
+    <form method="get" action="http://www.radio24syv.dk/soegeresultater/">
+    <input type="text" name="q" class="search-box"><input type="submit" value="Søg" class="search-btn">
+    </form>
+</div>
+
+</header>
+
+<div class="red-line"></div>
+<div id="main"><div id="mainsub">
+  <div id="content"><div id="contentsub">
+        
+        
+
+        <!-- Page content -->
+    <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+    <div id="jp_container_1" class="player">
+      <div id="buffer-holder" class="hold"> <!-- .gt50 only needed when buffer is > than 50% -->
+        <div id="buffer1" class="buffer">
+        </div>
+        <div id="buffer2" class="buffer fill" style="display:none"> <!-- this div, with extra .fill only needed when buffer is > than 50% -->
+        </div>
+      </div>       
+      <div id="circle-holder" class="hold"> <!-- .gt50 only needed when progress is > than 50% -->
+        <div id="progress1" class="progress">
+        </div>
+        <div id="progress2" class="progress fill" style="display:none"> <!-- this div, with extra .fill only needed when progress is > than 50% -->
+        </div>
+      </div>       
+      <div class="click-control"></div>
+        <ul class="jp-controls">
+          <li><a href="#" class="jp-play" tabindex="1">play</a></li>
+          <li><a href="#" class="jp-pause" style="display:none;" tabindex="1">pause</a></li>
+        </ul>
+      </div>
+    </div>  
+
+
+    <!--BEGIN .entry-content -->
+                        <div id="transcript" class="entry-content"><div id="transcript-content">
+<p>
+<span m="67" oval="Speaker:">[Speaker]:</span>
+<span m="296" oval="..">..</span>
+<span m="526" oval="et">et</span>
+<span m="755" oval="kig">kig</span>
+<span m="985" oval="på">på</span>
+<span m="1214" oval="vejret.">vejret.</span>
+<span m="1444" oval="I">I</span>
+<span m="1673" oval="aften">aften</span>
+<span m="1903" oval="og">og</span>
+<span m="2132" oval="i">i</span>
+<span m="2362" oval="nat">nat</span>
+<span m="2591" oval="mest">mest</span>
+<span m="2821" oval="skyet,">skyet,</span>
+<span m="3050" oval="og">og</span>
+<span m="3276" oval="i">i</span>
+<span m="3502" oval="Nordjylland">Nordjylland</span>
+<span m="3728" oval="stedvis">stedvis</span>
+<span m="3954" oval="regn">regn</span>
+<span m="4181" oval="i">i</span>
+<span m="4407" oval="løbet">løbet</span>
+<span m="4633" oval="af">af</span>
+<span m="4859" oval="natten.">natten.</span>
+<span m="5085" oval="Frisk">Frisk</span>
+<span m="5335" oval="vind">vind</span>
+<span m="5585" oval="til">til</span>
+<span m="5835" oval="kuling">kuling</span>
+<span m="6085" oval="fra">fra</span>
+<span m="6335" oval="sydvest">sydvest</span>
+<span m="6585" oval="og">og</span>
+<span m="6835" oval="vest,">vest,</span>
+<span m="7093" oval="og">og</span>
+<span m="7377" oval="temperaturer">temperaturer</span>
+<span m="7662" oval="mellem">mellem</span>
+<span m="7946" oval="7">7</span>
+<span m="8231" oval="og">og</span>
+<span m="8515" oval="10">10</span>
+<span m="8800" oval="grader.">grader.</span>
+<span m="9084" oval="Nu">Nu</span>
+<span m="9905" oval="fortsætter">fortsætter</span>
+<span m="10725" oval="vores">vores</span>
+<span m="11546" oval="kulturprogram">kulturprogram</span>
+<span m="12367" oval="AK">AK</span>
+<span m="13187" oval="24syv.">24syv.</span>
+<p>
+<span m="14068" oval="[mærkeligt">[mærkeligt</span>
+<span m="17735" oval="radiosignal,">radiosignal,</span>
+<span m="21401" oval="støj]">støj]</span>
+</p>
+<p>
+<span m="25068" oval="[russisk">[russisk</span>
+<span m="26179" oval="speaker]">speaker]:</span>
+<span m="27290" oval="Nikolai,">Nikolai,</span>
+<span m="28401" oval="Anna,">Anna,</span>
+<span m="29512" oval="Ivan,">Ivan,</span>
+<span m="30624" oval="Michael,">Michael,</span>
+<span m="31735" oval="Ivan,">Ivan,</span>
+<span m="32846" oval="Nikolai,">Nikolai,</span>
+<span m="33957" oval="Anna..">Anna..</span>
+<p>
+<span m="35068" oval="[Vært]:">[Vært]:</span>
+<span m="35515" oval="Du">Du</span>
+<span m="35962" oval="hører">hører</span>
+<span m="36410" oval="lyden">lyden</span>
+<span m="36857" oval="af">af</span>
+<span m="37304" oval="den">den</span>
+<span m="37751" oval="russiske">russiske</span>
+<span m="38199" oval="radiosender">radiosender</span>
+<span m="38646" oval="UVB-76">UVB-76</span>
+<span m="39093" oval="I">I</span>
+<span m="39486" oval="årtier">årtier</span>
+<span m="39879" oval="har">har</span>
+<span m="40271" oval="den">den</span>
+<span m="40664" oval="sendt">sendt</span>
+<span m="41057" oval="mystiske">mystiske</span>
+<span m="41450" oval="lyde">lyde</span>
+<span m="41843" oval="ud">ud</span>
+<span m="42235" oval="i">i</span>
+<span m="42628" oval="verden">verden</span>
+<span m="43021" oval="fra">fra</span>
+<span m="43451" oval="et">et</span>
+<span m="43881" oval="hemmeligst">hemmeligst</span>
+<span m="44311" oval="sted">sted</span>
+<span m="44740" oval="nordvest">nordvest</span>
+<span m="45170" oval="for">for</span>
+<span m="45600" oval="Moskva.">Moskva.</span>
+<span m="46030" oval="Den">Den</span>
+<span m="46480" oval="har">har</span>
+<span m="46930" oval="sendt">sendt</span>
+<span m="47381" oval="talkoder,">talkoder,</span>
+<span m="47831" oval="rækker">rækker</span>
+<span m="48281" oval="af">af</span>
+<span m="48731" oval="tilsyneladende">tilsyneladende</span>
+<span m="49182" oval="tilfældige">tilfældige</span>
+<span m="49632" oval="navne.">navne.</span>
+<span m="50099" oval="Men">Men</span>
+<span m="50473" oval="for">for</span>
+<span m="50848" oval="det">det</span>
+<span m="51222" oval="meste">meste</span>
+<span m="51596" oval="har">har</span>
+<span m="51970" oval="den">den</span>
+<span m="52345" oval="sendt">sendt</span>
+<span m="52719" oval="regelmæssige">regelmæssige</span>
+<span m="53093" oval="og">og</span>
+<span m="53686" oval="monotone">monotone</span>
+<span m="54278" oval="toner">toner</span>
+<span m="54871" oval="som">som</span>
+<span m="55463" oval="disse:">disse:</span>
+</p>
+<p>
+<span m="56077" oval="[mærkeligt">[mærkeligt</span>
+<span m="57080" oval="radiosignal,">radiosignal,</span>
+<span m="58083" oval="atmosfærisk">atmosfærisk</span>
+<span m="59086" oval="støj]">støj]</span>
+</p>
+<p>
+<span m="60000" oval="[Vært]:">[Vært]:</span>
+<span m="60089" oval="Den">Den</span>
+<span m="60443" oval="russiske">russiske</span>
+<span m="60796" oval="kortbølgeradio">kortbølgeradio</span>
+<span m="61150" oval="har">har</span>
+<span m="61504" oval="sendt">sendt</span>
+<span m="61857" oval="meddelelser">meddelelser</span>
+<span m="62211" oval="ud">ud</span>
+<span m="62565" oval="i">i</span>
+<span m="62918" oval="verden">verden</span>
+<span m="63272" oval="i">i</span>
+<span m="63625" oval="mere">mere</span>
+<span m="63979" oval="end">end</span>
+<span m="64333" oval="30">30</span>
+<span m="64686" oval="år.">år.</span>
+<span m="65043" oval="Men">Men</span>
+<span m="65544" oval="den">den</span>
+<span m="66044" oval="idag">idag</span>
+<span m="66545" oval="ved">ved</span>
+<span m="67045" oval="ingen">ingen</span>
+<span m="67546" oval="hvorfor.">hvorfor.</span>
+<span m="68079" oval="Den">Den</span>
+<span m="68572" oval="kommende">kommende</span>
+<span m="69064" oval="time">time</span>
+<span m="69557" oval="handler">handler</span>
+<span m="70050" oval="om">om</span>
+<span m="70542" oval="den">den</span>
+<span m="71035" oval="russiske">russiske</span>
+<span m="71527" oval="radiosender">radiosender</span>
+<span m="72020" oval="som">som</span>
+<span m="72387" oval="de">de</span>
+<span m="72754" oval="seneste">seneste</span>
+<span m="73120" oval="år">år</span>
+<span m="73487" oval="har">har</span>
+<span m="73854" oval="fået">fået</span>
+<span m="74221" oval="flere">flere</span>
+<span m="74588" oval="hundredtusind">hundredtusind</span>
+<span m="74955" oval="lyttere">lyttere</span>
+<span m="75321" oval="verden">verden</span>
+<span m="75688" oval="over.">over.</span>
+<span m="77011" oval="Du">Du</span>
+<span m="77300" oval="kan">kan</span>
+<span m="77588" oval="blandt">blandt</span>
+<span m="77877" oval="andet">andet</span>
+<span m="78165" oval="møde">møde</span>
+<span m="78454" oval="ham">ham</span>
+<span m="78742" oval="her">her:</span>
+</p>
+<p>
+<span m="79031" oval="Gæst:">[Gæst]:</span>
+<span m="79363" oval="Som">Som</span>
+<span m="79696" oval="sagt">sagt</span>
+<span m="80028" oval="ved">ved</span>
+<span m="80360" oval="man">man</span>
+<span m="80692" oval="ikke">ikke</span>
+<span m="81025" oval="præcis">præcis</span>
+<span m="81357" oval="hvad">hvad</span>
+<span m="81689" oval="formålet">formålet</span>
+<span m="82021" oval="var">var</span>
+<span m="82354" oval="med">med</span>
+<span m="82686" oval="stationen">stationen</span>
+<span m="83018" oval="da">da</span>
+<span m="83363" oval="den">den</span>
+<span m="83708" oval="stod">stod</span>
+<span m="84053" oval="tæt">tæt</span>
+<span m="84398" oval="på">på</span>
+<span m="84743" oval="Moskva.">Moskva.</span>
+<span m="85088" oval="Det">Det</span>
+<span m="85385" oval="mest">mest</span>
+<span m="85682" oval="sandsynlige">sandsynlige</span>
+<span m="85979" oval="var">var</span>
+<span m="86276" oval="at">at</span>
+<span m="86572" oval="den">den</span>
+<span m="86869" oval="var">var</span>
+<span m="87166" oval="en">en</span>
+<span m="87463" oval="del">del</span>
+<span m="87760" oval="af">af</span>
+<span m="88057" oval="det">det</span>
+<span m="88723" oval="sovjetiske">sovjetiske</span>
+<span m="89388" oval="kernevåbenforsvar.">kernevåbenforsvar.</span>
+<span m="90054" oval="En">En</span>
+<span m="90392" oval="kommunikationskanal">kommunikationskanal</span>
+<span m="90730" oval="som">som</span>
+<span m="91068" oval="skulle">skulle</span>
+<span m="91406" oval="overleve">overleve</span>
+<span m="91744" oval="det">det</span>
+<span m="92082" oval="værst">værst</span>
+<span m="92420" oval="tænkelige">tænkelige</span>
+<span m="92758" oval="uheld.">uheld.</span>
+<span m="94021" oval="Du">Du</span>
+<span m="94277" oval="kan">kan</span>
+<span m="94532" oval="også">også</span>
+<span m="94788" oval="møde">møde</span>
+<span m="95043" oval="en">en</span>
+<span m="95299" oval="radioamatør">radioamatør</span>
+<span m="95554" oval="fra">fra</span>
+<span m="95810" oval="Lolland,">Lolland,</span>
+<span m="96065" oval="som">som</span>
+<span m="96506" oval="lytter">lytter</span>
+<span m="96947" oval="til">til</span>
+<span m="97387" oval="den">den</span>
+<span m="97828" oval="russiske">russiske</span>
+<span m="98269" oval="radio">radio</span>
+<span m="98710" oval="som">som</span>
+<span m="99150" oval="sin">sin</span>
+<span m="99591" oval="hobby.">hobby.</span>
+</p>
+<p>
+<span m="100051" oval="Radioamatør:">[Radioamatør]:</span>
+<span m="100903" oval="Jeg">Jeg</span>
+<span m="101756" oval="skruer">skruer</span>
+<span m="102608" oval="lidt">lidt</span>
+<span m="103460" oval="rundt">rundt</span>
+<span m="104312" oval="på">på</span>
+<span m="105165" oval="frekvenserne.">frekvenserne.</span>
+<span m="106017" oval="Jeg">Jeg</span>
+<span m="106635" oval="har">har</span>
+<span m="107253" oval="fundet">fundet</span>
+<span m="107870" oval="det">det</span>
+<span m="108488" oval="område">område</span>
+<span m="109106" oval="som">som</span>
+<span m="109724" oval="vi">vi</span>
+<span m="110341" oval="ved">ved</span>
+<span m="110959" oval="at">at</span>
+<span m="111577" oval="UVB-76">UVB-76</span>
+<span m="112195" oval="befinder">befinder</span>
+<span m="112812" oval="sig">sig</span>
+<span m="113430" oval="i.">i.</span>
+</p>
+<p>
+<span m="114048" oval="[Vært]:">[Vært]:</span>
+<span m="114384" oval="Og">Og</span>
+<span m="114719" oval="så">så</span>
+<span m="115055" oval="ringer">ringer</span>
+<span m="115391" oval="vi">vi</span>
+<span m="115726" oval="til">til</span>
+<span m="116062" oval="den">den</span>
+<span m="116398" oval="russiske">russiske</span>
+<span m="116733" oval="hær,">hær,</span>
+<span m="117069" oval="som">som</span>
+<span m="117566" oval="angiveligt">angiveligt</span>
+<span m="118063" oval="er">er</span>
+<span m="118560" oval="dem,">dem,</span>
+<span m="119056" oval="der">der</span>
+<span m="119553" oval="står">står</span>
+<span m="120050" oval="bag">bag</span>
+<span m="120547" oval="senderen,">senderen,</span>
+<span m="121044" oval="og">og</span>
+<span m="121541" oval="de">de</span>
+<span m="122037" oval="mystiske">mystiske</span>
+<span m="122534" oval="meddelelser.">meddelelser.</span>
+</p>
+<p>
+<span m="123041" oval="[Telefon">[Telefon</span>
+<span m="123372" oval="ringer.">ringer.</span>
+<span m="123704" oval="Der">Der</span>
+<span m="124035" oval="svares">svares</span>
+<span m="124366" oval="på">på</span>
+<span m="124698" oval="russisk]">russisk]</span>
+</p>
+<p>
+<span m="125029" oval="[Vært]:">[Vært]:</span>
+<span m="125476" oval="Goddag,">Goddag,</span>
+<span m="125924" oval="vi">vi</span>
+<span m="126371" oval="søger">søger</span>
+<span m="126818" oval="nogle">nogle</span>
+<span m="127266" oval="informationer">informationer</span>
+<span m="127713" oval="om">om</span>
+<span m="128160" oval="radiosenderen">radiosenderen</span>
+<span m="128608" oval="UVB-76">UVB-76</span>
+</p>
+<p>
+<span m="129055" oval="[spørgsmål">[spørgsmål</span>
+<span m="129727" oval="stilles">stilles</span>
+<span m="130398" oval="på">på</span>
+<span m="131070" oval="russisk">russisk</span>
+<span m="131742" oval="af">af</span>
+<span m="132413" oval="tolk]">tolk]</span>
+</p>
+<p>
+<span m="133085" oval="Ved">Ved</span>
+<span m="133502" oval="du">du</span>
+<span m="133920" oval="hvem">hvem</span>
+<span m="134337" oval="vi">vi</span>
+<span m="134754" oval="kan">kan</span>
+<span m="135171" oval="tale">tale</span>
+<span m="135589" oval="med?">med?</span>
+</p>
+<p>
+<span m="139073" oval="[mærkeligt">[mærkeligt</span>
+<span m="142560" oval="radiosignal]">radiosignal]</span>
+</p>
+<p>
+<span m="152006" oval="[Vært]:">[Vært]:</span>
+<span m="152515" oval="Men">Men</span>
+<span m="153024" oval="først">først</span>
+<span m="153533" oval="skal">skal</span>
+<span m="154041" oval="vi">vi</span>
+<span m="154550" oval="tilbage">tilbage</span>
+<span m="155059" oval="til">til</span>
+<span m="155568" oval="1982.">1982.</span>
+</p>
+<p>
+<span m="156080" oval="[lyd">[lyd</span>
+<span m="156742" oval="af">af</span>
+<span m="157405" oval="UVB-76]">UVB-76]</span>
+</p>
+<p>
+<span m="158074" oval="De">De</span>
+<span m="159053" oval="første">første</span>
+<span m="160031" oval="signaler.">signaler.</span>
+</p>
+<p>
+<span m="161010" oval="[lyd">[lyd</span>
+<span m="163009" oval="af">af</span>
+<span m="165008" oval="UVB-76]">UVB-76]</span>
+</p>
+<p>
+<span m="167006" oval="[Vært]:">[Vært]:</span>
+<span m="167007" oval="Den">Den</span>
+<span m="167512" oval="russiske">russiske</span>
+<span m="168018" oval="radiosender">radiosender</span>
+<span m="168523" oval="har">har</span>
+<span m="169028" oval="angiveligt">angiveligt</span>
+<span m="169533" oval="eksisteret">eksisteret</span>
+<span m="170039" oval="siden">siden</span>
+<span m="170544" oval="1970erne">1970erne</span>
+<span m="171049" oval="men">men</span>
+<span m="171650" oval="de">de</span>
+<span m="172250" oval="første">første</span>
+<span m="172851" oval="signaler">signaler</span>
+<span m="173451" oval="blev">blev</span>
+<span m="174052" oval="opfanget">opfanget</span>
+<span m="174653" oval="omkring">omkring</span>
+<span m="175253" oval="1982">1982</span>
+<span m="175854" oval="af">af</span>
+<span m="176454" oval="radioamatører.">radioamatører.</span>
+<span m="177055" oval="Signalet">Signalet</span>
+<span m="178046" oval="bestod">bestod</span>
+<span m="179037" oval="af">af</span>
+<span m="180028" oval="regelmæssige">regelmæssige</span>
+<span m="181019" oval="toner">toner</span>
+<span m="182010" oval="som">som</span>
+<span m="182313" oval="kunne">kunne</span>
+<span m="182616" oval="høres">høres</span>
+<span m="182920" oval="af">af</span>
+<span m="183223" oval="radiolyttere">radiolyttere</span>
+<span m="183526" oval="over">over</span>
+<span m="183829" oval="store">store</span>
+<span m="184132" oval="dele">dele</span>
+<span m="184436" oval="af">af</span>
+<span m="184739" oval="verden.">verden.</span>
+<span m="185042" oval="Tonerne">Tonerne</span>
+<span m="185541" oval="var">var</span>
+<span m="186041" oval="korte,">korte,</span>
+<span m="186541" oval="omkring">omkring</span>
+<span m="187040" oval="et">et</span>
+<span m="187539" oval="sekund">sekund</span>
+<span m="188039" oval="og">og</span>
+<span m="188401" oval="blev">blev</span>
+<span m="188762" oval="gentaget">gentaget</span>
+<span m="189124" oval="med">med</span>
+<span m="189486" oval="mellem">mellem</span>
+<span m="189848" oval="20">20</span>
+<span m="190209" oval="og">og</span>
+<span m="190571" oval="35">35</span>
+<span m="190933" oval="gange">gange</span>
+<span m="191295" oval="i">i</span>
+<span m="191656" oval="minuttet.">minuttet.</span>
+<span m="192018" oval="Efter">Efter</span>
+<span m="192686" oval="hver">hver</span>
+<span m="193353" oval="tone">tone</span>
+<span m="194021" oval="var">var</span>
+<span m="194688" oval="der">der</span>
+<span m="195356" oval="omkring">omkring</span>
+<span m="196023" oval="et">et</span>
+<span m="196691" oval="sekunds">sekunds</span>
+<span m="197358" oval="pause.">pause.</span>
+<span m="198026" oval="En">En</span>
+<span m="198255" oval="gang">gang</span>
+<span m="198485" oval="imellem">imellem</span>
+<span m="198714" oval="blev">blev</span>
+<span m="198944" oval="tonerne">tonerne</span>
+<span m="199173" oval="afbrudt">afbrudt</span>
+<span m="199403" oval="af">af</span>
+<span m="199632" oval="en">en</span>
+<span m="199862" oval="stemme">stemme</span>
+<span m="200091" oval="som">som</span>
+<span m="200531" oval="opremsede">opremsede</span>
+<span m="200971" oval="korte">korte</span>
+<span m="201411" oval="ord">ord</span>
+<span m="201851" oval="eller">eller</span>
+<span m="202291" oval="talrækker">talrækker</span>
+<span m="202731" oval="eller">eller</span>
+<span m="203171" oval="russiske">russiske</span>
+<span m="203611" oval="navne.">navne.</span>
+<span m="204051" oval="Anna.">Anna.</span>
+<span m="205246" oval="Nikolaj,">Nikolaj,</span>
+<span m="206441" oval="Ivan,">Ivan,</span>
+<span m="207637" oval="Tatiana,">Tatiana,</span>
+<span m="208832" oval="Roman.">Roman.</span>
+<span m="212070" oval="Med">Med</span>
+<span m="212570" oval="os">os</span>
+<span m="213070" oval="her">her</span>
+<span m="213569" oval="i">i</span>
+<span m="214069" oval="studiet">studiet</span>
+<span m="214569" oval="er">er</span>
+<span m="215069" oval="Henry">Henry</span>
+<span m="215569" oval="Stech,">Stech,</span>
+<span m="216069" oval="og">og</span>
+<span m="216568" oval="du">du</span>
+<span m="217068" oval="er">er</span>
+<span m="217568" oval="ingeniør">ingeniør</span>
+<span m="218068" oval="i">i</span>
+<span m="218568" oval="IT">IT</span>
+<span m="219067" oval="&">&</span>
+<span m="219567" oval="Telestyrelsen,">Telestyrelsen,</span>
+<span m="220067" oval="og">og</span>
+<span m="220563" oval="du">du</span>
+<span m="221059" oval="har">har</span>
+<span m="221555" oval="arbejdet">arbejdet</span>
+<span m="222051" oval="med">med</span>
+<span m="222547" oval="kortbølgeradio.">kortbølgeradio.</span>
+<span m="223043" oval="Helt">Helt</span>
+<span m="224040" oval="kort:">kort:</span>
+<span m="225037" oval="hvad">hvad</span>
+<span m="226035" oval="er">er</span>
+<span m="227032" oval="UVB-76?">UVB-76?</span>
+</p>
+<p>
+<span m="228029" oval="[Stech]:">[Stech]:</span>
+<span m="228861" oval="Selve">Selve</span>
+<span m="229694" oval="betegnelsen">betegnelsen</span>
+<span m="230526" oval="er">er</span>
+<span m="231358" oval="radioens">radioens</span>
+<span m="232191" oval="kaldesignal.">kaldesignal.</span>
+<span m="233023" oval="Men">Men</span>
+<span m="233522" oval="det">det</span>
+<span m="234020" oval="spændende">spændende</span>
+<span m="234519" oval="er">er</span>
+<span m="235017" oval="det,">det,</span>
+<span m="235516" oval="den">den</span>
+<span m="236014" oval="sender">sender</span>
+<span m="236513" oval="ud">ud</span>
+<span m="237011" oval="på">på</span>
+<span m="237510" oval="kortbølgebåndet.">kortbølgebåndet.</span>
+<span m="238070" oval="Det">Det</span>
+<span m="238405" oval="er">er</span>
+<span m="238740" oval="en">en</span>
+<span m="239076" oval="meget">meget</span>
+<span m="239411" oval="underlig">underlig</span>
+<span m="239746" oval="brummetone,">brummetone,</span>
+<span m="240081" oval="der">der</span>
+<span m="240417" oval="kommer">kommer</span>
+<span m="240752" oval="igen">igen</span>
+<span m="241096" oval="pulserende,">pulserende,</span>
+<span m="241709" oval="hele">hele</span>
+<span m="242323" oval="tiden.">tiden.</span>
+<span m="242936" oval="Det">Det</span>
+<span m="243550" oval="er">er</span>
+<span m="244163" oval="ikke">ikke</span>
+<span m="244776" oval="bare">bare</span>
+<span m="245390" oval="enkelttoner,">enkelttoner,</span>
+<span m="246003" oval="som">som</span>
+<span m="246230" oval="man">man</span>
+<span m="246457" oval="kan">kan</span>
+<span m="246683" oval="finde">finde</span>
+<span m="246910" oval="mange">mange</span>
+<span m="247137" oval="steder,">steder,</span>
+<span m="247364" oval="men">men</span>
+<span m="247590" oval="den">den</span>
+<span m="247817" oval="brummetone">brummetone</span>
+<span m="248044" oval="virker">virker</span>
+<span m="248402" oval="meget">meget</span>
+<span m="248759" oval="underlig.">underlig.</span>
+<span m="249117" oval="Det">Det</span>
+<span m="249474" oval="i">i</span>
+<span m="249832" oval="sig">sig</span>
+<span m="250189" oval="selv">selv</span>
+<span m="250547" oval="er">er</span>
+<span m="250905" oval="nok">nok</span>
+<span m="251262" oval="til">til</span>
+<span m="251620" oval="at">at</span>
+<span m="251977" oval="tiltrække">tiltrække</span>
+<span m="252335" oval="sig">sig</span>
+<span m="252692" oval="opmærksomheden.">opmærksomheden.</span>
+</p>
+<p>
+<span m="253049" oval="[Vært]:">[Vært]:</span>
+<span m="253050" oval="Hvor">Hvor</span>
+<span m="253627" oval="meget">meget</span>
+<span m="254204" oval="ved">ved</span>
+<span m="254781" oval="vi">vi</span>
+<span m="255358" oval="om">om</span>
+<span m="255935" oval="UVB-76">UVB-76</span>
+<span m="256512" oval="idag?">idag?</span>
+</p>
+<p>
+<span m="257088" oval="[Stech]:">[Stech]:</span>
+<span m="257089" oval="Nu">Nu</span>
+<span m="257586" oval="er">er</span>
+<span m="258083" oval="ejeren">ejeren</span>
+<span m="258580" oval="af">af</span>
+<span m="259077" oval="denne">denne</span>
+<span m="259573" oval="sender">sender</span>
+<span m="260070" oval="jo">jo</span>
+<span m="260567" oval="ikke">ikke</span>
+<span m="261064" oval="særlig">særlig</span>
+<span m="261561" oval="meddelsom.">meddelsom.</span>
+<span m="262058" oval="Så">Så</span>
+<span m="262388" oval="det">det</span>
+<span m="262717" oval="er">er</span>
+<span m="263047" oval="svært">svært</span>
+<span m="263377" oval="at">at</span>
+<span m="263706" oval="få">få</span>
+<span m="264036" oval="helt">helt</span>
+<span m="264366" oval="præcise">præcise</span>
+<span m="264695" oval="oplysninger.">oplysninger.</span>
+<span m="265025" oval="Men">Men</span>
+<span m="265425" oval="man">man</span>
+<span m="265825" oval="kan">kan</span>
+<span m="266225" oval="indirekte,">indirekte,</span>
+<span m="266625" oval="udfra">udfra</span>
+<span m="267025" oval="forskellige">forskellige</span>
+<span m="267425" oval="andre">andre</span>
+<span m="267825" oval="metoder,">metoder,</span>
+<span m="268224" oval="finde">finde</span>
+<span m="268624" oval="ud">ud</span>
+<span m="269024" oval="af">af</span>
+<span m="269424" oval="hvor">hvor</span>
+<span m="269824" oval="den">den</span>
+<span m="270224" oval="står">står</span>
+<span m="270624" oval="henne.">henne.</span>
+<span m="271024" oval="Man">Man</span>
+<span m="271276" oval="kan">kan</span>
+<span m="271528" oval="pejle">pejle</span>
+<span m="271780" oval="senderen.">senderen.</span>
+<span m="272033" oval="Det">Det</span>
+<span m="272285" oval="er">er</span>
+<span m="272537" oval="jo">jo</span>
+<span m="272789" oval="en">en</span>
+<span m="273041" oval="af">af</span>
+<span m="273293" oval="ulemperne">ulemperne</span>
+<span m="273545" oval="ved">ved</span>
+<span m="273797" oval="at">at</span>
+<span m="274049" oval="starte">starte</span>
+<span m="274302" oval="sådan">sådan</span>
+<span m="274554" oval="en">en</span>
+<span m="274806" oval="sender.">sender.</span>
+<span m="275058" oval="Den">Den</span>
+<span m="275312" oval="er">er</span>
+<span m="275566" oval="jo">jo</span>
+<span m="275819" oval="ikke">ikke</span>
+<span m="276073" oval="neutral.">neutral.</span>
+<span m="276327" oval="Den">Den</span>
+<span m="276581" oval="kan">kan</span>
+<span m="276834" oval="findes.">findes.</span>
+<span m="277088" oval="Man">Man</span>
+<span m="277582" oval="ved">ved</span>
+<span m="278077" oval="hvor">hvor</span>
+<span m="278571" oval="den">den</span>
+<span m="279065" oval="står">står</span>
+<span m="279559" oval="i">i</span>
+<span m="280054" oval="Rusland.">Rusland.</span>
+<span m="280548" oval="Man">Man</span>
+<span m="281042" oval="ved">ved</span>
+<span m="281537" oval="også">også</span>
+<span m="282031" oval="at">at</span>
+<span m="282525" oval="det,">det,</span>
+<span m="283019" oval="der">der</span>
+<span m="283514" oval="bliver">bliver</span>
+<span m="284008" oval="sendt">sendt</span>
+<span m="284342" oval="ud,">ud,</span>
+<span m="284676" oval="er">er</span>
+<span m="285010" oval="beregnet">beregnet</span>
+<span m="285344" oval="til">til</span>
+<span m="285678" oval="nogen">nogen</span>
+<span m="286013" oval="der">der</span>
+<span m="286347" oval="skal">skal</span>
+<span m="286681" oval="lytte">lytte</span>
+<span m="287015" oval="med">med</span>
+<span m="287349" oval="simple">simple</span>
+<span m="287683" oval="modtagere.">modtagere.</span>
+<span m="288017" oval="For">For</span>
+<span m="288479" oval="selve">selve</span>
+<span m="288940" oval="modulationsformen;">modulationsformen;</span>
+<span m="289402" oval="den">den</span>
+<span m="289864" oval="måde">måde</span>
+<span m="290325" oval="talen">talen</span>
+<span m="290787" oval="er">er</span>
+<span m="291248" oval="kodet">kodet</span>
+<span m="291710" oval="ind">ind</span>
+<span m="292172" oval="i">i</span>
+<span m="292633" oval="signalet">signalet</span>
+<span m="293095" oval="er">er</span>
+<span m="293538" oval="en">en</span>
+<span m="293981" oval="meget">meget</span>
+<span m="294424" oval="enkel">enkel</span>
+<span m="294867" oval="form">form</span>
+<span m="295310" oval="for">for</span>
+<span m="295753" oval="modulation.">modulation.</span>
+<span m="296196" oval="Så">Så</span>
+<span m="296639" oval="vi">vi</span>
+<span m="297082" oval="ved">ved</span>
+<span m="297524" oval="den">den</span>
+<span m="297967" oval="der">der</span>
+<span m="298410" oval="lytter">lytter</span>
+<span m="298853" oval="benytter">benytter</span>
+<span m="299296" oval="en">en</span>
+<span m="299739" oval="meget">meget</span>
+<span m="300182" oval="enkel">enkel</span>
+<span m="300625" oval="modtager.">modtager.</span>
+</p>
+<p>
+<span m="303060" oval="[Vært]:">[Vært]:</span>
+<span m="303263" oval="Vi">Vi</span>
+<span m="303465" oval="ved">ved</span>
+<span m="303668" oval="hvor">hvor</span>
+<span m="303870" oval="den">den</span>
+<span m="304073" oval="står,">står,</span>
+<span m="304276" oval="og">og</span>
+<span m="304478" oval="vi">vi</span>
+<span m="304681" oval="ved">ved</span>
+<span m="304883" oval="noget">noget</span>
+<span m="305086" oval="om">om</span>
+<span m="305289" oval="modtagerne.">modtagerne.</span>
+<span m="305491" oval="Ved">Ved</span>
+<span m="305694" oval="vi">vi</span>
+<span m="305896" oval="andet?">andet?</span>
+</p>
+<p>
+<span m="306099" oval="[Stech]:">[Stech]:</span>
+<span m="306651" oval="Frekvensvalget">Frekvensvalget</span>
+<span m="307204" oval="har">har</span>
+<span m="307756" oval="også">også</span>
+<span m="308309" oval="noget">noget</span>
+<span m="308861" oval="med">med</span>
+<span m="309414" oval="dækningsområdet">dækningsområdet</span>
+<span m="309966" oval="at">at</span>
+<span m="310519" oval="gøre.">gøre.</span>
+<span m="311071" oval="Man">Man</span>
+<span m="311571" oval="har">har</span>
+<span m="312070" oval="valgt">valgt</span>
+<span m="312570" oval="nogle">nogle</span>
+<span m="313069" oval="bestemte">bestemte</span>
+<span m="313569" oval="frekvenser.">frekvenser.</span>
+<span m="314068" oval="Enden">Enden</span>
+<span m="314469" oval="eller">eller</span>
+<span m="314870" oval="dele">dele</span>
+<span m="315271" oval="af">af</span>
+<span m="315672" oval="kortbølgebåndet">kortbølgebåndet</span>
+<span m="316073" oval="at">at</span>
+<span m="316475" oval="sende">sende</span>
+<span m="316876" oval="frekvenserne">frekvenserne</span>
+<span m="317678" oval="på.">på.</span>
+<span m="318079" oval="Frekvensområdet">Frekvensområdet</span>
+<span m="318518" oval="den">den</span>
+<span m="318958" oval="bliver">bliver</span>
+<span m="319397" oval="sendt">sendt</span>
+<span m="319837" oval="ud">ud</span>
+<span m="320276" oval="på">på</span>
+<span m="320716" oval="er">er</span>
+<span m="321155" oval="egnet">egnet</span>
+<span m="321595" oval="til">til</span>
+<span m="322034" oval="at">at</span>
+<span m="322400" oval="dække">dække</span>
+<span m="322766" oval="større">større</span>
+<span m="323131" oval="lokalområder,">lokalområder,</span>
+<span m="323497" oval="det">det</span>
+<span m="323863" oval="er">er</span>
+<span m="324229" oval="ikke">ikke</span>
+<span m="324595" oval="noget">noget</span>
+<span m="324961" oval="der">der</span>
+<span m="325326" oval="er">er</span>
+<span m="325692" oval="egnet">egnet</span>
+<span m="326058" oval="til">til</span>
+<span m="327045" oval="verdensomspændende">verdensomspændende</span>
+<span m="328032" oval="kommunikation.">kommunikation.</span>
+<span m="329019" oval="Det">Det</span>
+<span m="329326" oval="der">der</span>
+<span m="329633" oval="bliver">bliver</span>
+<span m="329940" oval="sendt">sendt</span>
+<span m="330247" oval="et">et</span>
+<span m="330554" oval="eller">eller</span>
+<span m="330861" oval="andet">andet</span>
+<span m="331167" oval="sted">sted</span>
+<span m="331474" oval="i">i</span>
+<span m="331781" oval="Rusland">Rusland</span>
+<span m="332088" oval="er">er</span>
+<span m="332395" oval="ikke">ikke</span>
+<span m="332702" oval="egnet">egnet</span>
+<span m="333009" oval="til">til</span>
+<span m="333265" oval="at">at</span>
+<span m="333521" oval="skulle">skulle</span>
+<span m="333776" oval="blive">blive</span>
+<span m="334032" oval="opfanget">opfanget</span>
+<span m="334288" oval="i">i</span>
+<span m="334544" oval="USA.">USA.</span>
+<span m="334799" oval="Det">Det</span>
+<span m="335055" oval="kan">kan</span>
+<span m="335311" oval="det">det</span>
+<span m="335566" oval="blive,">blive,</span>
+<span m="335822" oval="sporadisk.">sporadisk.</span>
+<span m="336078" oval="Men">Men</span>
+<span m="336874" oval="man">man</span>
+<span m="337669" oval="kan">kan</span>
+<span m="338465" oval="udnytte">udnytte</span>
+<span m="339261" oval="signalet">signalet</span>
+<span m="340057" oval="i">i</span>
+<span m="340852" oval="det">det</span>
+<span m="341648" oval="generelle">generelle</span>
+<span m="342444" oval="Russiske">Russiske</span>
+<span m="343239" oval="område.">område.</span>
+</p>
+<p>
+<span m="344035" oval="[Vært]:">[Vært]:</span>
+<span m="344465" oval="Hvad">Hvad</span>
+<span m="344894" oval="kan">kan</span>
+<span m="345324" oval="vi">vi</span>
+<span m="345753" oval="udlede">udlede</span>
+<span m="346183" oval="af">af</span>
+<span m="346612" oval="det?">det?</span>
+</p>
+<p>
+<span m="347042" oval="[Stech]:">[Stech]:</span>
+<span m="347502" oval="At">At</span>
+<span m="347962" oval="det">det</span>
+<span m="348422" oval="er">er</span>
+<span m="348882" oval="til">til</span>
+<span m="349342" oval="interne">interne</span>
+<span m="349802" oval="formål.">formål.</span>
+<span m="350262" oval="Det">Det</span>
+<span m="350722" oval="er">er</span>
+<span m="351182" oval="ikke">ikke</span>
+<span m="351642" oval="rettet">rettet</span>
+<span m="352102" oval="mod">mod</span>
+<span m="352562" oval="agenter">agenter</span>
+<span m="353022" oval="i">i</span>
+<span m="353523" oval="lande,">lande,</span>
+<span m="354024" oval="man">man</span>
+<span m="354525" oval="skal">skal</span>
+<span m="355026" oval="kommunikere">kommunikere</span>
+<span m="355527" oval="med.">med.</span>
+<span m="356028" oval="Det">Det</span>
+<span m="356431" oval="er">er</span>
+<span m="356834" oval="helt">helt</span>
+<span m="357237" oval="klart">klart</span>
+<span m="357640" oval="beregnet">beregnet</span>
+<span m="358044" oval="til">til</span>
+<span m="358447" oval="intern">intern</span>
+<span m="358850" oval="kommunikation">kommunikation</span>
+<span m="359253" oval="i">i</span>
+<span m="359656" oval="Rusland.">Rusland.</span>
+</p>
+<p>
+<span m="360059" oval="[Vært]:">[Vært]:</span>
+<span m="360513" oval="Godt.">Godt.</span>
+<span m="360966" oval="Der">Der</span>
+<span m="361420" oval="er">er</span>
+<span m="361874" oval="også">også</span>
+<span m="362327" oval="en">en</span>
+<span m="362781" oval="række">række</span>
+<span m="363234" oval="ting">ting</span>
+<span m="363688" oval="vi">vi</span>
+<span m="364142" oval="ikke">ikke</span>
+<span m="364595" oval="ved?">ved?</span>
+</p>
+<p>
+<span m="365049" oval="[Stech]:">[Stech]:</span>
+<span m="365474" oval="Vi">Vi</span>
+<span m="365900" oval="kender">kender</span>
+<span m="366325" oval="ikke">ikke</span>
+<span m="366751" oval="det">det</span>
+<span m="367176" oval="overordnede">overordnede</span>
+<span m="367602" oval="formål.">formål.</span>
+<span m="368027" oval="Hvorfor">Hvorfor</span>
+<span m="368366" oval="man">man</span>
+<span m="368705" oval="i">i</span>
+<span m="369044" oval="disse">disse</span>
+<span m="369383" oval="moderne">moderne</span>
+<span m="369722" oval="kommunikationstider,">kommunikationstider,</span>
+<span m="370061" oval="hvor">hvor</span>
+<span m="370400" oval="man">man</span>
+<span m="370739" oval="har">har</span>
+<span m="371078" oval="stribevis">stribevis</span>
+<span m="371821" oval="af">af</span>
+<span m="372565" oval="alternative">alternative</span>
+<span m="373309" oval="kommunikationsmetoder;">kommunikationsmetoder;</span>
+<span m="374052" oval="satellitter,">satellitter,</span>
+<span m="374796" oval="optiske">optiske</span>
+<span m="375539" oval="fibre">fibre</span>
+<span m="376283" oval="-">-</span>
+<span m="377026" oval="systemer">systemer</span>
+<span m="377387" oval="som">som</span>
+<span m="377749" oval="har">har</span>
+<span m="378110" oval="en">en</span>
+<span m="378472" oval="høj">høj</span>
+<span m="378833" oval="grad">grad</span>
+<span m="379195" oval="af">af</span>
+<span m="379556" oval="soliditet,">soliditet,</span>
+<span m="379918" oval="vælger">vælger</span>
+<span m="380279" oval="at">at</span>
+<span m="380641" oval="benytte">benytte</span>
+<span m="381002" oval="så">så</span>
+<span m="381511" oval="primitivt">primitivt</span>
+<span m="382020" oval="et">et</span>
+<span m="382530" oval="kommunikationssystem.">kommunikationssystem.</span>
+<span m="383039" oval="Modulationsformen">Modulationsformen</span>
+<span m="384462" oval="fortæller,">fortæller,</span>
+<span m="385886" oval="at">at</span>
+<span m="387309" oval="dem">dem</span>
+<span m="388732" oval="der">der</span>
+<span m="390155" oval="er">er</span>
+<span m="391579" oval="modtager,">modtager,</span>
+<span m="393012" oval="forventer">forventer</span>
+<span m="393449" oval="man">man</span>
+<span m="393886" oval="kun">kun</span>
+<span m="394323" oval="har">har</span>
+<span m="394759" oval="en">en</span>
+<span m="395196" oval="enkelt">enkelt</span>
+<span m="395633" oval="modtager.">modtager.</span>
+<span m="396083" oval="Det">Det</span>
+<span m="396415" oval="er">er</span>
+<span m="396746" oval="jo">jo</span>
+<span m="397078" oval="interessant">interessant</span>
+<span m="397409" oval="når">når</span>
+<span m="397741" oval="det">det</span>
+<span m="398072" oval="er">er</span>
+<span m="398404" oval="i">i</span>
+<span m="398735" oval="selve">selve</span>
+<span m="399067" oval="det">det</span>
+<span m="399398" oval="russiske">russiske</span>
+<span m="399730" oval="område.">område.</span>
+<span m="400061" oval="Det">Det</span>
+<span m="400564" oval="kunne">kunne</span>
+<span m="401067" oval="tyde">tyde</span>
+<span m="401570" oval="på">på</span>
+<span m="402073" oval="det">det</span>
+<span m="402576" oval="er">er</span>
+<span m="403080" oval="et">et</span>
+<span m="403583" oval="back-up">back-up</span>
+<span m="404086" oval="system,">system,</span>
+<span m="404589" oval="eller">eller</span>
+<span m="405092" oval="fall-back">fall-back</span>
+<span m="405595" oval="system.">system.</span>
+<span m="407001" oval="Noget">Noget</span>
+<span m="407338" oval="man">man</span>
+<span m="407675" oval="har">har</span>
+<span m="408011" oval="tænkt">tænkt</span>
+<span m="408348" oval="sig">sig</span>
+<span m="408685" oval="at">at</span>
+<span m="409022" oval="bruge">bruge</span>
+<span m="409359" oval="i">i</span>
+<span m="409696" oval="en">en</span>
+<span m="410033" oval="stresset,">stresset,</span>
+<span m="410369" oval="kritisk">kritisk</span>
+<span m="410706" oval="situation">situation</span>
+<span m="411043" oval="Hvor">Hvor</span>
+<span m="412035" oval="anden">anden</span>
+<span m="413027" oval="kommunikation">kommunikation</span>
+<span m="414018" oval="ikke">ikke</span>
+<span m="415010" oval="virker.">virker.</span>
+<span m="416002" oval="Vi">Vi</span>
+<span m="416452" oval="ved">ved</span>
+<span m="416901" oval="ikke">ikke</span>
+<span m="417351" oval="hvilken">hvilken</span>
+<span m="417800" oval="stresset">stresset</span>
+<span m="418250" oval="situation">situation</span>
+<span m="418699" oval="de">de</span>
+<span m="419149" oval="tænker">tænker</span>
+<span m="419598" oval="på.">på.</span>
+<span m="420098" oval="Er">Er</span>
+<span m="420649" oval="det">det</span>
+<span m="421201" oval="et">et</span>
+<span m="421752" oval="generelt">generelt</span>
+<span m="422304" oval="energiudfald?">energiudfald?</span>
+<span m="422855" oval="Er">Er</span>
+<span m="423407" oval="det">det</span>
+<span m="423958" oval="et">et</span>
+<span m="424510" oval="styringssystem">styringssystem</span>
+<span m="425061" oval="tænk">tænk</span>
+<span m="425687" oval="til">til</span>
+<span m="426313" oval="den">den</span>
+<span m="426939" oval="ekstreme">ekstreme</span>
+<span m="427566" oval="situation,">situation,</span>
+<span m="428192" oval="en">en</span>
+<span m="428818" oval="global">global</span>
+<span m="429444" oval="atomkrig?">atomkrig?</span>
+<span m="430070" oval="Det">Det</span>
+<span m="430564" oval="ved">ved</span>
+<span m="431059" oval="man">man</span>
+<span m="431553" oval="ikke.">ikke.</span>
+<span m="433035" oval="em">Dem</span>
+<span m="433530" oval="der">der</span>
+<span m="434024" oval="ejer">ejer</span>
+<span m="434518" oval="og">og</span>
+<span m="435013" oval="driver">driver</span>
+<span m="435507" oval="systemet">systemet</span>
+<span m="436001" oval="er">er</span>
+<span m="436273" oval="ikke">ikke</span>
+<span m="436545" oval="særligt">særligt</span>
+<span m="436816" oval="meddelsomme.">meddelsomme.</span>
+</p>
+<p>
+<span m="438013" oval="[Vært]:">[Vært]:</span>
+<span m="438351" oval="Hvem">Hvem</span>
+<span m="438688" oval="ejer">ejer</span>
+<span m="439025" oval="og">og</span>
+<span m="439363" oval="driver">driver</span>
+<span m="439701" oval="systemet?">systemet?</span>
+</p>
+<p>
+<span m="440038" oval="[Stech]:">[Stech]:</span>
+<span m="440267" oval="Udfra">Udfra</span>
+<span m="440495" oval="de">de</span>
+<span m="440724" oval="oplysninger">oplysninger</span>
+<span m="440953" oval="man">man</span>
+<span m="441181" oval="kan">kan</span>
+<span m="441410" oval="finde">finde</span>
+<span m="441639" oval="forskellige">forskellige</span>
+<span m="441867" oval="steder">steder</span>
+<span m="442096" oval="er">er</span>
+<span m="442713" oval="det">det</span>
+<span m="443330" oval="den">den</span>
+<span m="443947" oval="russiske">russiske</span>
+<span m="444564" oval="generalstab">generalstab</span>
+<span m="445181" oval="der">der</span>
+<span m="445798" oval="kører">kører</span>
+<span m="446415" oval="systemet.">systemet.</span>
+</p>
+<p>
+<span m="447032" oval="[radiosignal]">[radiosignal]</span>
+<span m="451027" oval="Placering.">Placering.</span>
+<span m="455022" oval="[radiosignal]">[radiosignal]</span>
+</p>
+<p>
+<span m="459017" oval="I">I</span>
+<span m="459422" oval="80´erne">80´erne</span>
+<span m="459827" oval="og">og</span>
+<span m="460232" oval="90´erne">90´erne</span>
+<span m="460637" oval="sendte">sendte</span>
+<span m="461042" oval="den">den</span>
+<span m="461447" oval="russiske">russiske</span>
+<span m="461852" oval="radio">radio</span>
+<span m="462257" oval="mystiske">mystiske</span>
+<span m="462662" oval="lyde">lyde</span>
+<span m="463067" oval="ud">ud</span>
+<span m="463562" oval="i">i</span>
+<span m="464056" oval="verden.">verden.</span>
+<span m="464551" oval="Ingen">Ingen</span>
+<span m="465045" oval="vidste">vidste</span>
+<span m="465540" oval="hvorfra,">hvorfra,</span>
+<span m="466035" oval="men">men</span>
+<span m="466529" oval="ved">ved</span>
+<span m="467024" oval="at">at</span>
+<span m="467518" oval="sammenligne">sammenligne</span>
+<span m="468013" oval="flere">flere</span>
+<span m="468641" oval="radiomodtagelser,">radiomodtagelser,</span>
+<span m="469269" oval="regnede">regnede</span>
+<span m="469897" oval="radioentusiaster">radioentusiaster</span>
+<span m="470525" oval="sig">sig</span>
+<span m="471152" oval="frem">frem</span>
+<span m="471780" oval="til">til</span>
+<span m="472408" oval="placeringen.">placeringen.</span>
+<span m="473044" oval="Lydsignalerne">Lydsignalerne</span>
+<span m="473448" oval="viste">viste</span>
+<span m="473853" oval="sig">sig</span>
+<span m="474257" oval="at">at</span>
+<span m="474662" oval="komme">komme</span>
+<span m="475066" oval="fra">fra</span>
+<span m="475470" oval="en">en</span>
+<span m="475875" oval="sendemast">sendemast</span>
+<span m="476279" oval="omkring">omkring</span>
+<span m="476684" oval="40km">40km</span>
+<span m="477088" oval="Nordvest">Nordvest</span>
+<span m="477641" oval="for">for</span>
+<span m="478193" oval="Moskva,">Moskva,</span>
+<span m="478746" oval="fra">fra</span>
+<span m="479299" oval="et">et</span>
+<span m="479851" oval="område">område</span>
+<span m="480404" oval="som">som</span>
+<span m="480957" oval="var">var</span>
+<span m="481509" oval="kontrolleret">kontrolleret</span>
+<span m="482062" oval="af">af</span>
+<span m="482941" oval="det">det</span>
+<span m="483820" oval="russiske">russiske</span>
+<span m="484699" oval="millitær.">millitær.</span>
+<span m="485579" oval="Alle">Alle</span>
+<span m="486458" oval="aktiviteter">aktiviteter</span>
+<span m="487337" oval="var">var</span>
+<span m="488216" oval="hemmeligstemplede.">hemmeligstemplede.</span>
+<span m="492013" oval="Med">Med</span>
+<span m="492372" oval="os">os</span>
+<span m="492730" oval="her">her</span>
+<span m="493089" oval="i">i</span>
+<span m="493448" oval="studier">studier</span>
+<span m="493806" oval="har">har</span>
+<span m="494165" oval="vi">vi</span>
+<span m="494524" oval="også">også</span>
+<span m="494882" oval="radioamatør">radioamatør</span>
+<span m="495241" oval="Søren">Søren</span>
+<span m="495599" oval="Rosenberg">Rosenberg</span>
+<span m="495958" oval="Jensen">Jensen</span>
+<span m="496317" oval="fra">fra</span>
+<span m="496675" oval="Lolland.">Lolland.</span>
+<span m="497034" oval="Du">Du</span>
+<span m="497657" oval="har">har</span>
+<span m="498280" oval="noget">noget</span>
+<span m="498903" oval="radioudstyr">radioudstyr</span>
+<span m="499525" oval="liggende">liggende</span>
+<span m="500148" oval="her">her</span>
+<span m="500771" oval="på">på</span>
+<span m="501394" oval="bordet.">bordet.</span>
+<span m="502017" oval="Kan">Kan</span>
+<span m="502640" oval="du">du</span>
+<span m="503263" oval="prøve">prøve</span>
+<span m="503886" oval="at">at</span>
+<span m="504509" oval="forklare">forklare</span>
+<span m="505131" oval="hvad">hvad</span>
+<span m="505754" oval="det">det</span>
+<span m="506377" oval="er?">er?</span>
+</p>
+<p>
+<span m="507000" oval="[Jensen]:">[Jensen]:</span>
+<span m="507674" oval="Jeg">Jeg</span>
+<span m="508348" oval="har">har</span>
+<span m="509021" oval="taget">taget</span>
+<span m="509695" oval="en">en</span>
+<span m="510369" oval="lille">lille</span>
+<span m="511043" oval="kortbølge">kortbølge</span>
+<span m="511716" oval="sender/modtager">sender/modtager</span>
+<span m="512390" oval="med.">med.</span>
+<span m="513064" oval="Det">Det</span>
+<span m="513727" oval="er">er</span>
+<span m="514390" oval="en">en</span>
+<span m="515053" oval="der">der</span>
+<span m="515716" oval="kan">kan</span>
+<span m="516379" oval="lytte">lytte</span>
+<span m="517043" oval="på">på</span>
+<span m="517706" oval="de">de</span>
+<span m="518369" oval="her">her</span>
+<span m="519032" oval="frekvenser,">frekvenser,</span>
+<span m="519695" oval="blandt">blandt</span>
+<span m="520358" oval="andet.">andet.</span>
+<span m="521021" oval="Som">Som</span>
+<span m="521386" oval="jeg">jeg</span>
+<span m="521752" oval="selv">selv</span>
+<span m="522117" oval="bruger">bruger</span>
+<span m="522483" oval="til">til</span>
+<span m="522848" oval="at">at</span>
+<span m="523214" oval="sende">sende</span>
+<span m="523579" oval="på">på</span>
+<span m="523945" oval="og">og</span>
+<span m="524310" oval="kommunikere">kommunikere</span>
+<span m="524676" oval="med.">med.</span>
+<span m="525041" oval="Men">Men</span>
+<span m="525375" oval="i">i</span>
+<span m="525708" oval="det">det</span>
+<span m="526042" oval="her">her</span>
+<span m="526375" oval="tilfælde">tilfælde</span>
+<span m="526709" oval="til">til</span>
+<span m="527042" oval="at">at</span>
+<span m="527376" oval="lytte">lytte</span>
+<span m="527709" oval="på.">på.</span>
+</p>
+<p>
+<span m="528043" oval="[Vært]:">[Vært]:</span>
+<span m="528331" oval="..">..</span>
+<span m="528619" oval="og">og</span>
+<span m="528907" oval="for">for</span>
+<span m="529195" oval="lyttere">lyttere</span>
+<span m="529483" oval="der">der</span>
+<span m="529771" oval="ikke">ikke</span>
+<span m="530059" oval="kan">kan</span>
+<span m="530347" oval="se">se</span>
+<span m="530635" oval="udstyret,">udstyret,</span>
+<span m="530923" oval="hvordan">hvordan</span>
+<span m="531211" oval="ser">ser</span>
+<span m="531499" oval="det">det</span>
+<span m="531787" oval="ud?">ud?</span>
+<span m="532088" oval="[Jensen]:">[Jensen]:</span>
+<span m="532512" oval="Jeg">Jeg</span>
+<span m="532937" oval="har">har</span>
+<span m="533361" oval="to">to</span>
+<span m="533785" oval="apparater">apparater</span>
+<span m="534209" oval="med">med</span>
+<span m="534634" oval="her.">her.</span>
+<span m="535059" oval="Det">Det</span>
+<span m="535508" oval="ene">ene</span>
+<span m="535958" oval="er">er</span>
+<span m="536407" oval="selve">selve</span>
+<span m="536856" oval="radioen.">radioen.</span>
+<span m="537306" oval="Det">Det</span>
+<span m="537755" oval="er">er</span>
+<span m="538205" oval="en">en</span>
+<span m="538654" oval="sort,">sort,</span>
+<span m="539103" oval="flad">flad</span>
+<span m="539553" oval="kasse,">kasse,</span>
+<span m="540002" oval="med">med</span>
+<span m="540453" oval="nogle">nogle</span>
+<span m="540905" oval="knapper">knapper</span>
+<span m="541356" oval="på">på</span>
+<span m="541807" oval="forsiden,">forsiden,</span>
+<span m="542259" oval="og">og</span>
+<span m="542710" oval="nogle">nogle</span>
+<span m="543161" oval="forskellige">forskellige</span>
+<span m="543613" oval="hjul.">hjul.</span>
+</p>
+<p>
+<span m="544064" oval="[Vært]:">[Vært]:</span>
+<span m="544559" oval="Og">Og</span>
+<span m="545054" oval="den">den</span>
+<span m="545549" oval="er">er</span>
+<span m="546043" oval="koblet">koblet</span>
+<span m="546538" oval="til..?">til..?</span>
+</p>
+<p>
+<span m="547033" oval="[Jensen]:">[Jensen]:</span>
+<span m="547447" oval="Den">Den</span>
+<span m="547861" oval="er">er</span>
+<span m="548275" oval="koblet">koblet</span>
+<span m="548689" oval="til">til</span>
+<span m="549103" oval="en">en</span>
+<span m="549517" oval="boks">boks</span>
+<span m="549930" oval="man">man</span>
+<span m="550344" oval="kan">kan</span>
+<span m="550758" oval="kalde">kalde</span>
+<span m="551172" oval="en">en</span>
+<span m="551586" oval="antennetuner.">antennetuner.</span>
+<span m="552000" oval="Eller">Eller</span>
+<span m="552511" oval="afstemningsled.">afstemningsled.</span>
+<span m="553023" oval="Det">Det</span>
+<span m="553534" oval="er">er</span>
+<span m="554045" oval="simpelthen">simpelthen</span>
+<span m="554556" oval="bare">bare</span>
+<span m="555068" oval="en">en</span>
+<span m="555579" oval="boks,">boks,</span>
+<span m="556090" oval="der">der</span>
+<span m="556642" oval="hjælper">hjælper</span>
+<span m="557194" oval="til">til</span>
+<span m="557746" oval="med">med</span>
+<span m="558298" oval="at">at</span>
+<span m="558851" oval="tilpasse">tilpasse</span>
+<span m="559403" oval="antennen.">antennen.</span>
+<span m="559955" oval="Under">Under</span>
+<span m="560507" oval="normale">normale</span>
+<span m="561059" oval="forhold">forhold</span>
+<span m="561261" oval="vil">vil</span>
+<span m="561463" oval="man">man</span>
+<span m="561666" oval="lave">lave</span>
+<span m="561868" oval="en">en</span>
+<span m="562070" oval="antenne">antenne</span>
+<span m="562272" oval="der">der</span>
+<span m="562474" oval="passer">passer</span>
+<span m="562677" oval="til">til</span>
+<span m="562879" oval="den">den</span>
+<span m="563081" oval="frekvens">frekvens</span>
+<span m="563510" oval="man">man</span>
+<span m="563940" oval="vil">vil</span>
+<span m="564369" oval="sende">sende</span>
+<span m="564799" oval="og">og</span>
+<span m="565228" oval="modtage">modtage</span>
+<span m="565658" oval="på.">på.</span>
+<span m="566087" oval="Den">Den</span>
+<span m="566307" oval="her">her</span>
+<span m="566528" oval="kan">kan</span>
+<span m="566748" oval="så">så</span>
+<span m="566968" oval="hjælpe">hjælpe</span>
+<span m="567189" oval="med">med</span>
+<span m="567409" oval="at">at</span>
+<span m="567629" oval="tilpasse">tilpasse</span>
+<span m="567850" oval="antennen,">antennen,</span>
+<span m="568070" oval="så">så</span>
+<span m="568664" oval="radioen">radioen</span>
+<span m="569259" oval="kan">kan</span>
+<span m="569853" oval="bruge">bruge</span>
+<span m="570448" oval="den.">den.</span>
+</p>
+<p>
+<span m="571042" oval="[Vært]:">[Vært]:</span>
+<span m="571406" oval="Og">Og</span>
+<span m="571771" oval="på">på</span>
+<span m="572135" oval="den">den</span>
+<span m="572499" oval="her">her</span>
+<span m="572863" oval="radio">radio</span>
+<span m="573228" oval="har">har</span>
+<span m="573592" oval="du">du</span>
+<span m="573956" oval="kunne">kunne</span>
+<span m="574320" oval="opfange">opfange</span>
+<span m="574685" oval="UVB-76?">UVB-76?</span>
+</p>
+<p>
+<span m="575049" oval="[Jensen]:">[Jensen]:</span>
+<span m="575544" oval="Ja,">Ja,</span>
+<span m="576039" oval="det">det</span>
+<span m="576535" oval="har">har</span>
+<span m="577030" oval="jeg,">jeg,</span>
+<span m="577525" oval="ja.">ja.</span>
+</p>
+<p>
+<span m="578020" oval="[Vært]:">[Vært]:</span>
+<span m="578280" oval="skal">skal</span>
+<span m="578539" oval="vi">vi</span>
+<span m="578799" oval="prøve">prøve</span>
+<span m="579059" oval="at">at</span>
+<span m="579318" oval="sætte">sætte</span>
+<span m="579578" oval="den">den</span>
+<span m="579837" oval="op?">op?</span>
+</p>
+<p>
+<span m="580097" oval="[Jensen]:">[Jensen]:</span>
+<span m="580390" oval="Ja,">Ja,</span>
+<span m="580682" oval="vi">vi</span>
+<span m="580975" oval="kan">kan</span>
+<span m="581267" oval="prøve">prøve</span>
+<span m="581560" oval="om">om</span>
+<span m="581852" oval="vi">vi</span>
+<span m="582145" oval="kan">kan</span>
+<span m="582437" oval="høre">høre</span>
+<span m="582730" oval="noget.">noget.</span>
+<span m="583022" oval="Om">Om</span>
+<span m="583448" oval="der">der</span>
+<span m="583874" oval="er">er</span>
+<span m="584300" oval="for">for</span>
+<span m="584725" oval="meget">meget</span>
+<span m="585151" oval="elektromagnetisk">elektromagnetisk</span>
+<span m="585577" oval="støj.">støj.</span>
+<span m="586003" oval="Det">Det</span>
+<span m="586310" oval="er">er</span>
+<span m="586618" oval="noget">noget</span>
+<span m="586925" oval="der">der</span>
+<span m="587233" oval="er">er</span>
+<span m="587540" oval="meget">meget</span>
+<span m="587847" oval="af">af</span>
+<span m="588155" oval="i">i</span>
+<span m="588462" oval="det">det</span>
+<span m="588770" oval="frekvenseområde.">frekvenseområde.</span>
+</p>
+<p>
+<span m="589077" oval="[Vært]:">[Vært]:</span>
+<span m="589497" oval="Kan">Kan</span>
+<span m="589918" oval="du">du</span>
+<span m="590338" oval="forklare">forklare</span>
+<span m="590759" oval="hvad">hvad</span>
+<span m="591179" oval="du">du</span>
+<span m="591600" oval="gør?">gør?</span>
+</p>
+<p>
+<span m="592020" oval="[Jensen]:">[Jensen]:</span>
+<span m="592291" oval="Ja,">Ja,</span>
+<span m="592563" oval="jeg">jeg</span>
+<span m="592834" oval="har">har</span>
+<span m="593105" oval="et">et</span>
+<span m="593376" oval="stykke">stykke</span>
+<span m="593648" oval="ledning,">ledning,</span>
+<span m="593919" oval="jeg">jeg</span>
+<span m="594190" oval="bruger">bruger</span>
+<span m="594461" oval="som">som</span>
+<span m="594733" oval="antenne.">antenne.</span>
+<span m="595004" oval="Det">Det</span>
+<span m="595558" oval="er">er</span>
+<span m="596111" oval="et">et</span>
+<span m="596665" oval="helt">helt</span>
+<span m="597218" oval="almindeligt">almindeligt</span>
+<span m="597772" oval="højtalerkabel">højtalerkabel</span>
+<span m="598325" oval="der">der</span>
+<span m="598879" oval="sidder">sidder</span>
+<span m="599432" oval="til">til</span>
+<span m="599986" oval="i">i</span>
+<span m="600539" oval="radioen.">radioen.</span>
+<span m="602045" oval="Nu">Nu</span>
+<span m="602717" oval="bliver">bliver</span>
+<span m="603390" oval="det">det</span>
+<span m="604062" oval="lidt">lidt</span>
+<span m="604734" oval="kompliceret">kompliceret</span>
+<span m="605407" oval="..">..</span>
+</p>
+<p>
+<span m="606079" oval="[lyd">[lyd</span>
+<span m="606647" oval="af">af</span>
+<span m="607215" oval="radioudstyr">radioudstyr</span>
+<span m="607783" oval="der">der</span>
+<span m="608352" oval="monteres">monteres</span>
+<span m="608920" oval="i">i</span>
+<span m="609488" oval="studiet]">studiet]</span>
+</p>
+<p>
+<span m="610056" oval="..">..</span>
+<span m="610680" oval="Op">Op</span>
+<span m="611304" oval="over">over</span>
+<span m="611927" oval="her.">her.</span>
+<span m="612551" oval="Nu">Nu</span>
+<span m="613175" oval="må">må</span>
+<span m="613799" oval="vi">vi</span>
+<span m="614422" oval="se.">se.</span>
+</p>
+<p>
+<span m="615046" oval="[Vært]:">[Vært]:</span>
+<span m="615294" oval="kan">kan</span>
+<span m="615541" oval="du">du</span>
+<span m="615789" oval="forklare">forklare</span>
+<span m="616037" oval="hvad">hvad</span>
+<span m="616284" oval="I">I</span>
+<span m="616532" oval="har">har</span>
+<span m="616779" oval="gjort?">gjort?</span>
+</p>
+<p>
+<span m="617027" oval="[Jensen]:">[Jensen]:</span>
+<span m="617396" oval="Nu">Nu</span>
+<span m="617765" oval="har">har</span>
+<span m="618134" oval="vi">vi</span>
+<span m="618503" oval="hængt">hængt</span>
+<span m="618872" oval="ledningen,">ledningen,</span>
+<span m="619241" oval="som">som</span>
+<span m="619610" oval="går">går</span>
+<span m="619979" oval="ind">ind</span>
+<span m="620348" oval="i">i</span>
+<span m="620717" oval="antennetuneren,">antennetuneren,</span>
+<span m="621086" oval="og">og</span>
+<span m="621586" oval="ind">ind</span>
+<span m="622085" oval="i">i</span>
+<span m="622585" oval="radioen">radioen</span>
+<span m="623084" oval="og">og</span>
+<span m="623584" oval="over">over</span>
+<span m="624083" oval="et">et</span>
+<span m="624583" oval="par">par</span>
+<span m="625082" oval="højtalere">højtalere</span>
+<span m="625582" oval="her.">her.</span>
+<span m="626081" oval="Så">Så</span>
+<span m="626392" oval="må">må</span>
+<span m="626704" oval="vi">vi</span>
+<span m="627015" oval="se">se</span>
+<span m="627326" oval="om">om</span>
+<span m="627638" oval="man">man</span>
+<span m="627949" oval="kan">kan</span>
+<span m="628260" oval="høre">høre</span>
+<span m="628572" oval="noget.">noget.</span>
+<span m="628883" oval="Jeg">Jeg</span>
+<span m="629194" oval="kan">kan</span>
+<span m="629505" oval="prøve">prøve</span>
+<span m="629817" oval="at">at</span>
+<span m="630128" oval="tænde">tænde</span>
+<span m="630439" oval="for">for</span>
+<span m="630751" oval="den.">den.</span>
+</p>
+<p>
+<span m="631062" oval="[Bip.">[Bip.</span>
+<span m="636580" oval="Radiostøj].">Radiostøj].</span>
+</p>
+<p>
+<span m="642097" oval="[Vært]:">[Vært]:</span>
+<span m="642326" oval="Nu">Nu</span>
+<span m="642555" oval="skruer">skruer</span>
+<span m="642784" oval="du">du</span>
+<span m="643013" oval="på">på</span>
+<span m="643242" oval="nogle">nogle</span>
+<span m="643471" oval="knapper.">knapper.</span>
+<span m="643699" oval="Kan">Kan</span>
+<span m="643928" oval="du">du</span>
+<span m="644157" oval="forklare">forklare</span>
+<span m="644386" oval="hvad">hvad</span>
+<span m="644615" oval="du">du</span>
+<span m="644844" oval="gør?">gør?</span>
+</p>
+<p>
+<span m="645073" oval="[Jensen]:">[Jensen]:</span>
+<span m="645789" oval="jeg">jeg</span>
+<span m="646504" oval="skruer">skruer</span>
+<span m="647220" oval="lidt">lidt</span>
+<span m="647935" oval="rundt">rundt</span>
+<span m="648651" oval="på">på</span>
+<span m="649366" oval="frekvenserne.">frekvenserne.</span>
+<span m="650082" oval="Jeg">Jeg</span>
+<span m="650927" oval="har">har</span>
+<span m="651772" oval="fundet">fundet</span>
+<span m="652616" oval="det">det</span>
+<span m="653461" oval="område">område</span>
+<span m="654306" oval="som">som</span>
+<span m="655151" oval="vi">vi</span>
+<span m="655995" oval="ved">ved</span>
+<span m="656840" oval="at">at</span>
+<span m="657685" oval="UVB-76">UVB-76</span>
+<span m="658530" oval="befinder">befinder</span>
+<span m="659374" oval="sig">sig</span>
+<span m="660219" oval="i.">i.</span>
+<span m="661064" oval="Nu">Nu</span>
+<span m="661431" oval="kan">kan</span>
+<span m="661797" oval="vi">vi</span>
+<span m="662164" oval="prøve">prøve</span>
+<span m="662530" oval="at">at</span>
+<span m="662897" oval="køre">køre</span>
+<span m="663263" oval="hen">hen</span>
+<span m="663630" oval="på">på</span>
+<span m="663996" oval="en">en</span>
+<span m="664363" oval="frekvens">frekvens</span>
+<span m="664729" oval="her.">her.</span>
+</p>
+<p>
+<span m="665096" oval="[Vært]:">[Vært]:</span>
+<span m="666006" oval="Mens">Mens</span>
+<span m="666915" oval="du">du</span>
+<span m="667825" oval="prøver">prøver</span>
+<span m="668734" oval="det">det</span>
+<span m="669644" oval="går">går</span>
+<span m="670554" oval="vi">vi</span>
+<span m="671463" oval="videre">videre</span>
+<span m="672373" oval="med">med</span>
+<span m="673282" oval="historien">historien</span>
+<span m="674192" oval="om">om</span>
+<span m="675101" oval="UBV-76.">UBV-76.</span>
+</p>
+              </div>  
+
+
+
+        <!-- /Page content -->
+
+
+
+
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="red-line"></div>
+
+
+<!-- 24 syv stuff -->
+<!-- Footer (import) (layout block #3934803, liquid) -->
+<nav id="foot-links"><div class="content">
+<h2>Lyt til Radio24syv</h2><ul id="media-list" class="cf">
+
+<li class="fm">
+<a href="http://www.radio24syv.dk/lyt-til-radio24syv/fm/" class="media-icon"><span class="media-type">FM</span></a>
+</li><li class="dab">
+<a href="http://www.radio24syv.dk/lyt-til-radio24syv/dab/" class="media-icon"><span class="media-type">DAB</span></a>
+</li><li class="web">
+<a href="http://www.radio24syv.dk/lyt-til-radio24syv/web/" class="media-icon"><span class="media-type">Web</span></a>
+</li><li class="mobile">
+<a href="http://www.radio24syv.dk/lyt-til-radio24syv/mobil/" class="media-icon"><span class="media-type">Mobil</span></a>
+</li><li class="podcast">
+<a href="http://arkiv.radio24syv.dk" class="media-icon"><span class="media-type">Podcast</span></a>
+</li>
+</ul>
+</nav>
+
+<footer><div class="content">
+<section class="footer-block-small">
+<a href="http://www.radio24syv.dk/"><img id="logo-small" src="http://www.radio24syv.dk/css/images/logo_small.png" alt="Radio 24syv"></a><p>Vester Farimagsgade 41<br>
+          1606 København V<br>
+
+          Telefon: 31 247 247<br>          
+          CVR: 33501889<br>
+</p>
+</section><nav class="footer-block-small">
+<h2>Om Radio24syv</h2><ul class="list3">
+<li><a href="http://www.radio24syv.dk/om-radio24syv/historie/">Historie</a></li><li><a href="http://www.radio24syv.dk/om-radio24syv/ledelse/">Ledelse</a></li><li><a href="http://www.radio24syv.dk/om-radio24syv/mission/">Mission</a></li><li><a href="http://www.radio24syv.dk/om-radio24syv/public-service/">Public service</a></li><li><a href="http://www.radio24syv.dk/om-radio24syv/gaest-paa-radio24syv/">Gæst på Radio24syv</a></li><li><a href="http://www.radio24syv.dk/om-radio24syv/the-short-english-version/">The short English version</a></li>
+</ul>
+
+</nav><nav class="footer-block-small">
+<h2>Dig og Radio24syv</h2><ul class="list3">
+<li><a href="http://www.radio24syv.dk/dig-og-radio24syv/ofte-stillede-spoergsmaal/">Ofte stillede spørgsmål</a></li><li><a href="http://www.radio24syv.dk/dig-og-radio24syv/samvaer-online/">Samvær online</a></li><li><a href="http://www.radio24syv.dk/dig-og-radio24syv/kontakt-os/">Kontakt os</a></li><li><a href="http://www.radio24syv.dk/dig-og-radio24syv/vil-du-vaere-med/">Vil du være med?</a></li><li><a href="http://www.radio24syv.dk/dig-og-radio24syv/find-en-fejl/">Find en fejl</a></li>
+</ul>
+</nav><nav class="footer-block-big">
+<h2>Følg Radio24syv</h2><ul class="social-links cf">
+<li class="facebook"><a href="https://www.facebook.com/Radio24syv" target="_blank">Facebook</a></li><li class="twitter"><a href="http://twitter.com/#!/radio24syv" target="_blank">Twitter</a></li>
+</ul>
+
+</nav><div class="clear"></div>
+</div></footer>
+
+
+</div>
+
+
+
+</body>
+</html> <!-- /Liquid -->
