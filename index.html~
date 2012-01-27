@@ -209,8 +209,6 @@
 <div class="red-line"></div>
 <div id="main"><div id="mainsub">
   <div id="content"><div id="contentsub">
-        
-        
 
         <!-- Page content -->
   <div id="jquery_jplayer_1" class="jp-jplayer"></div>
@@ -245,6 +243,10 @@
 				</div>      
       </div>
     </div>
+
+		<!-- SIDEBAR -->
+<div id="sidebar">
+</div>
 
     <!--BEGIN .entry-content -->
                         <div id="transcript" class="entry-content"><div id="transcript-content">
