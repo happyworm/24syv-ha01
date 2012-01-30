@@ -69,28 +69,22 @@
   
     myPlayer.jPlayer({
       ready: function (event) {
-              $(this).jPlayer("setMedia", {
-                mp3: "http://arkiv.radio24syv.dk/1984082/4209798/1d38c04c82d6c5bf496ecd61c2a6c504/audio/ak-24syv-2.mp3"  
-
-          // shorter files - useful for testing
- 
-          /*mp3 : "http://www.jplayer.org/audio/mp3/TSP-13-Shmoort.mp3",
-                    oga : "http://www.jplayer.org/audio/ogg/TSP-13-Shmoort.ogg"*/
-              });   
+        $(this).jPlayer("setMedia", {
+          mp3 : "http://www.happyworm.com/clientarea/24syv/audio/ak-24syv-2-clip.mp3",
+          oga : "http://www.happyworm.com/clientarea/24syv/audio/ak-24syv-2-clip.ogg"
+        });   
+        
         if(event.jPlayer.html.used && event.jPlayer.html.audio.available) {
           initPopcorn('#' + $(this).data("jPlayer").internal.audio.id);
         }
-          }, 
+      }, 
         
       solution: "html, flash",
-          swfPath: "js",
-          supplied: "mp3"
-            //errorAlerts: "true",
-      //warningAlerts: "true"
-        });
-   
+      swfPath: "js",
+      supplied: "mp3, oga"
 
-    
+    });
+   
     function initPopcorn(id) {   
       var p = Popcorn(id);  
       
