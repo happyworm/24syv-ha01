@@ -1,0 +1,23 @@
+#transcript {
+	padding:64px;
+	position: relative;
+	
+}
+
+
+#transcript-content span {
+	cursor: pointer;
+}    
+
+#transcript-content span:hover {  
+	color: #f07d00; 
+} 
+ 
+/* @maboa */
+#transcript-content span.highlight {  
+	color: #fff; 
+}       
+
+#transcript-content span.transcript-grey {
+    color: #999;
+}
