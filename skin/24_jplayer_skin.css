@@ -11,11 +11,11 @@ div.jp-video {
     color: #fff;
 }
 div.jp-audio {
+	position: relative;
 	width:340px;
 	padding-top:0px;
 	margin-top: 20px;
-	margin-left: auto;
-	margin-right: auto;
+	margin-left: 70px;
 }
 
 div.jp-video-270p {
@@ -29,6 +29,14 @@ div.jp-interface {
 	width:100%;
 }
 
+#sidebar {
+	background: url('related_and_latest.png') no-repeat;
+	position: relative;
+	margin: 10px;
+	float: right;
+	width: 370px;
+	height: 900px;
+}
 
 div.jp-audio .jp-interface {
 	height: 60px;
