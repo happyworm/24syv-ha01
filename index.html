@@ -168,9 +168,94 @@
       return false;
     });
 
- 
+  // select text function
+    
+    function getSelText()
+    {
+      var txt = '';
+      if (window.getSelection){
+        txt = window.getSelection();
+      }
+      else if (document.getSelection){
+        txt = document.getSelection();
+      }
+      else if (document.selection){
+        txt = document.selection.createRange().text;
+      }          
+      
+      return txt;
+    }
 
-    });    
+
+    // Sets the excerpt
+
+    $('#transcript-content').mouseup(function(e){     
+      
+      $('#share-content').empty();
+      
+      var s = 0, e = 0;
+      var select = getSelText(); 
+        var tweetable = select+"";  
+
+      var startSpan = select.anchorNode.nextSibling; 
+      if (startSpan == null) {
+        startSpan = select.anchorNode.parentNode;
+      }
+      
+      var endSpan = select.focusNode.nextSibling;    
+      if (endSpan == null) {  
+        endSpan = select.focusNode.parentNode.nextElementSibling; 
+        if (endSpan == null) {
+          endSpan = select.focusNode.parentNode;
+        }
+      }       
+      
+      if (tweetable.length > 100) {
+        tweetable = tweetable.substr(0,97)+'...';
+      }
+      
+      /*console.dir(select);    
+      console.log(startSpan.getAttribute('oval'));    
+      console.log(startSpan.getAttribute('m'));   
+      console.log(endSpan.getAttribute('oval'));    
+      console.log(endSpan.getAttribute('m'));*/
+          
+            
+      
+      // Short and sweet      
+      
+      var s = Math.floor(parseInt(startSpan.getAttribute('m'))/100); 
+      var e = Math.floor(parseInt(endSpan.getAttribute('m'))/100);   
+      
+      // Make sure s < e
+      
+      if (s > e) {
+        var temp = e;
+        e = s;
+        s = temp;
+      }
+        
+      // Check that it isn't a single click ie endtime is not starttime , hmmm better checking required
+      if (s != e) {    
+      
+        // Clean up window.location in case it already has params on the url    
+      
+        var winLoc = window.location+"";      
+        var url = winLoc;
+        var paramStart = winLoc.indexOf('?');   
+      
+        if (paramStart > 0) {
+          url = winLoc.substr(0,paramStart);
+        }
+       
+        var theTweet = tweetable+" "+url+"?s="+s+"&e="+e;
+        $('#share-content').append(theTweet);  
+        //$('#tweet-like').empty(); 
+      } 
+    });  
+
+
+  });    
 
 
 
@@ -242,6 +327,8 @@
 				</div>      
       </div>
     </div>
+
+        <div id="share-content">Highlight a piece of the transcript below to share the corresponding part of the audio!</div>
 
     <!--BEGIN .entry-content -->
                         <div id="transcript" class="entry-content"><div id="transcript-content">
