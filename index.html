@@ -195,7 +195,7 @@
       
       var s = 0, e = 0;
       var select = getSelText(); 
-        var tweetable = select+"";  
+      var shareable = select+"";  
 
       var startSpan = select.anchorNode.nextSibling; 
       if (startSpan == null) {
@@ -210,8 +210,8 @@
         }
       }       
       
-      if (tweetable.length > 100) {
-        tweetable = tweetable.substr(0,97)+'...';
+      if (shareable.length > 100) {
+        shareable = shareable.substr(0,97)+'...';
       }
       
       /*console.dir(select);    
@@ -248,17 +248,16 @@
           url = winLoc.substr(0,paramStart);
         }
        
-        var theTweet = tweetable+" "+url+"?s="+s+"&e="+e;
-        $('#share-content').append(theTweet);  
-        //$('#tweet-like').empty(); 
+        var sharecontent = shareable+" "+url+"?s="+s+"&e="+e;
+        $('#share-content').append(sharecontent);  
+        $('#tweet-like').empty();
+        var tweetScript = '<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></'+'script><a data-url="" data-text="'+sharecontent+'" href="http://twitter.com/share?url=x" class="twitter-share-button">Tweet</a>';
+        $('#tweet-like').append(tweetScript);  
+    
       } 
     });  
 
-
   });    
-
-
-
 
   </script>  
 
@@ -329,6 +328,10 @@
     </div>
 
         <div id="share-content">Highlight a piece of the transcript below to share the corresponding part of the audio!</div>
+        <div id="tweet-like">  
+          <!--<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+          <a href="http://twitter.com/share" class="twitter-share-button">Tweet</a>   -->  
+        </div>
 
     <!--BEGIN .entry-content -->
                         <div id="transcript" class="entry-content"><div id="transcript-content">
