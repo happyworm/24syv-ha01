@@ -3,8 +3,10 @@
 <head>
 <!-- Meta Tags -->
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta property="og:title" content="Det mystiske radiosignal - AK 24syv" /> 
   
-  <title>Genialos - Året der gik, og året der kommer. (1) - Radio24syv | Arkiv</title>
+  
+  <title>"Det mystiske radiosignal" - AK 24syv</title>
 
 
   <!-- Style + Script (import) (layout block #3934702, liquid) -->
@@ -100,12 +102,7 @@
     function checkStartParam() {
       if (getUrlVars()["s"] != null) {    
         var s = parseInt(getUrlVars()["s"])/10;    
-
-        if (lang == 'en') {  
-            playerEn.jPlayer("play",s);    
-        } else {        
-          playerDa.jPlayer("play",s);
-        }
+        myPlayer.jPlayer("play",s);    
       }
     }
 
@@ -208,7 +205,10 @@
         if (endSpan == null) {
           endSpan = select.focusNode.parentNode;
         }
-      }       
+      }      
+      
+      
+      var fullShareable = shareable;
       
       if (shareable.length > 100) {
         shareable = shareable.substr(0,97)+'...';
@@ -251,8 +251,25 @@
         var sharecontent = shareable+" "+url+"?s="+s+"&e="+e;
         $('#share-content').append(sharecontent);  
         $('#tweet-like').empty();
+        $('#facebook-share').empty();
         var tweetScript = '<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></'+'script><a data-url="" data-text="'+sharecontent+'" href="http://twitter.com/share?url=x" class="twitter-share-button">Tweet</a>';
         $('#tweet-like').append(tweetScript);  
+        var fbScript = '<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></'+'script> <a href="http://www.facebook.com/sharer.php?u='+encodeURIComponent(url)+'&t='+encodeURIComponent(fullShareable)+'" name="fb_share" share_url="'+url+'?s='+s+'&e='+e+'"></a>';
+        $('#facebook-share').append(fbScript); 
+
+        function googlePlusShare(url, content) {
+          var w=480;
+          var h=380;
+          var x=Number((window.screen.width-w)/2);
+          var y=Number((window.screen.height-h)/2);
+          window.open('https://plusone.google.com/_/+1/confirm?hl=en&url='+encodeURIComponent(url)+'&title='+encodeURIComponent(content),'','width='+w+',height='+h+',left='+x+',top='+y+',scrollbars=no');
+        }
+
+        $('#googleplus-button').show();
+
+        $('#googleplus-button').click(function() {
+          googlePlusShare(url,fullShareable);
+        })
     
       } 
     });  
@@ -332,6 +349,16 @@
           <!--<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
           <a href="http://twitter.com/share" class="twitter-share-button">Tweet</a>   -->  
         </div>
+
+        <div id="facebook-share">
+          <!--<a name="fb_share" share_url=""></a> 
+          <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script> -->
+        </div>
+
+        <div id="googleplus-share">
+          <a id="googleplus-button" href="#" style="display:none">Google Plus Share</a>
+        </div>
+
 
     <!--BEGIN .entry-content -->
                         <div id="transcript" class="entry-content"><div id="transcript-content">
