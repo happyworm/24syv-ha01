@@ -443,19 +443,27 @@ div.jp-type-playlist div.jp-playlist div.jp-free-media {
 	top: 0px;
 }
 
-/* ADDTHIS bar */
-.addthis_toolbox {
-	background: url('24/seeking_grey.png') 0 repeat-y;
+/* SHAREBAR */
+.shareBar {
+/*	background: url('shareBtn.png') no-repeat; */
 	background-position: 0% 0%;
 	overflow: visible;
 	position: absolute;
 	display: none;
-	height: 25px;
+	height: 20px;
 	width: 100px;
 	z-index: 10;
 	padding-left: 3px;
 	margin-top: -39px;
 	left: 0px;
+}
+
+.shareBar a {
+	position: relative;
+	float: left;
+	width: 18px;
+	height: 18px;
+	margin: 1px;
 }
 
 .shareTime {
@@ -466,3 +474,18 @@ div.jp-type-playlist div.jp-playlist div.jp-free-media {
 	left: -30px;
 }
 
+a.shareFacebook {
+	background: url('shareBtn.png') -18px 0 no-repeat;
+}
+
+a.shareFacebook:hover {
+	background: url('shareBtn.png') -18px -20px no-repeat;
+}
+
+a.shareTweet {
+	background: url('shareBtn.png') 0 0 no-repeat;
+}
+
+a.shareTweet:hover {
+	background: url('shareBtn.png') 0 -20px no-repeat;
+}

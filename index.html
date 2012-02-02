@@ -35,8 +35,7 @@
   <script type="text/javascript" src="js/jquery.jplayer.js"></script>      
   <script type="text/javascript" src="js/mod.csstransforms.min.js"></script>
   <script type="text/javascript" src="js/popcorn.js"></script> 
-  <script type="text/javascript" src="js/popcorn.transcript.js"></script> 
-	<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
+  <script type="text/javascript" src="js/popcorn.transcript.js"></script>
   
   <script type="text/javascript">
   $(document).ready(function(){    
@@ -59,6 +58,22 @@
         }
         return vars;
     }  
+
+	function generateShareUrl(linkTime){
+		//var url = "http://arkiv.radio24syv.dk/v.ihtml" + noStartUrl(location.search)
+		var newUrl = url + '&start=' + linkTime;
+
+		$('.shareFacebook').attr('href', 'http://www.facebook.com/sharer.php?u=' + encodeURIComponent(newUrl) +'&t=Anbefaling af radio24syv" target="_blank"><img src="" />');
+		$('.shareTweet').attr('href', 'http://twitter.com/share?url=' +  encodeURIComponent(newUrl));
+
+		return newUrl;
+	}
+
+	function noStartUrl(url){
+		regexp = /&start=[0-9]*/;
+		newUrl = url.replace(regexp, '');
+		return newUrl;
+	}
 
     // url links to audio  
 
@@ -122,36 +137,68 @@
         endTime = null;
       }
 
-			// Move playhead
+		// Move playhead
 
-			$('.jp-play-head').css({'left' : + playTimeEn +'%' })
-    });
+		$('.jp-play-head').css({'left' : + playTimeEn +'%' })
+		});
 
 		// Events while seeking		
 
 		$('#jquery_jplayer_1').bind($.jPlayer.event.seeking, function(event){
-
-			$('.addthis_toolbox').hide();
-
+			$('.shareBar').hide();
 		});
 
 		// Seeked
 
 		$('#jquery_jplayer_1').bind($.jPlayer.event.seeked, function(event){	
 
-			// Display time on 'click' event
+			a = event.jPlayer.status.currentTime; //Sets starttime
+			time = parseInt(a);
 
-			time = parseInt(event.jPlayer.status.currentTime);
+			currentPercent = event.jPlayer.status.currentPercentAbsolute;
+			$('.shareBar').css({'left' : + currentPercent +'%' }).show();
+
 			currentTimeFormated = $.jPlayer.convertTime(time);
 			$('.shareTime').text(currentTimeFormated);
-
-			// Show AddThis toolbox
-
-			b = event.jPlayer.status.currentPercentAbsolute;
-			$('.addthis_toolbox').css({'left' : + b +'%' }).show();
 			
 			generateShareUrl(time);
+		});
+	
+		// Share from timeline - icon click listeners
+			// Facebook
+		$('.shareFacebook').click(function(event){
+			var width  = 575,
+				height = 400,
+				left   = ($(window).width()  - width)  / 2,
+				top    = ($(window).height() - height) / 2,
+				url    = this.href,
+				opts   = 'status=1' +
+						 ',width='  + width  +
+						 ',height=' + height +
+						 ',top='    + top    +
+						 ',left='   + left;
 
+			window.open(url, 'share on facebook', opts);
+
+			return false;
+		});
+
+			// Twitter
+		$('.shareTweet').click(function(event){    
+			var width  = 575,
+				height = 400,
+				left   = ($(window).width()  - width)  / 2,
+				top    = ($(window).height() - height) / 2,
+				url    = this.href,
+				opts   = 'status=1' +
+						 ',width='  + width  +
+						 ',height=' + height +
+						 ',top='    + top    +
+						 ',left='   + left;
+			
+			window.open(url, 'twitter', opts);
+
+			return false;
 		});
 
 
@@ -205,7 +252,7 @@
         if (endSpan == null) {
           endSpan = select.focusNode.parentNode;
         }
-      }      
+      }
       
       
       var fullShareable = shareable;
@@ -322,12 +369,10 @@
 				<div class="jp-progress-image">
 					<div class="jp-progress">
 						  <div class="jp-play-bar"></div>
-								<div class="addthis_toolbox addthis_default_style">
+								<div class="shareBar">
 									<div class="shareTime"></div>
-										<a class="addthis_button_link"></a>
-										<a class="addthis_button_facebook"></a>
-										<a class="addthis_button_twitter"></a>
-										<a class="addthis_button_compact"></a>
+										<a class="shareFacebook shareBox" href=""></a>
+										<a class="shareTweet shareBox" href=""></a>
 								</div>
 							<div class="jp-play-head">
 							<div class="jp-current-time"></div></div>
