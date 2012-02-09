@@ -443,35 +443,48 @@ div.jp-type-playlist div.jp-playlist div.jp-free-media {
 	top: 0px;
 }
 
-/* SHAREBAR */
+/* SHARE BAR */
 .shareBar {
-/*	background: url('shareBtn.png') no-repeat; */
-	background-position: 0% 0%;
 	overflow: visible;
-	position: absolute;
+	position: relative;
 	display: none;
-	height: 20px;
-	width: 100px;
+	height: 25px;
+	width: auto;
 	z-index: 10;
-	padding-left: 3px;
-	margin-top: -39px;
-	left: 0px;
+	margin-top: -42px;
+	left: -15px;
 }
 
 .shareBar a {
 	position: relative;
 	float: left;
-	width: 18px;
-	height: 18px;
+	width: 17px;
+	height: 20px;
 	margin: 1px;
 }
 
-.shareTime {
+.shareBar p {
 	position: absolute;
-	color: #222;
+	width: 90px;
+	left: 35px;
+	height: 15px;
+	margin: 1px;
 	font-size: 0.8em;
-	top: 0px;
-	left: -30px;
+	white-space: nowrap;
+	padding: 2px;
+	display: none;
+}
+
+.shareTime {
+	background: url('sep.png') repeat-y;
+	background-position: top right;
+	position: relative;
+	float: left;
+	color: #222;
+	width: 33;
+	font-family: arial;
+	font-size: 0.7em;
+	top: 4px;
 }
 
 a.shareFacebook {
@@ -479,7 +492,8 @@ a.shareFacebook {
 }
 
 a.shareFacebook:hover {
-	background: url('shareBtn.png') -18px -20px no-repeat;
+
+	background: url('shareBtn.png') -19px -23px no-repeat;	
 }
 
 a.shareTweet {
@@ -487,5 +501,22 @@ a.shareTweet {
 }
 
 a.shareTweet:hover {
-	background: url('shareBtn.png') 0 -20px no-repeat;
+	background: url('shareBtn.png') 0 -23px no-repeat;
+}
+
+a.shareLink {
+	background: url('shareBtn.png') -38px 0 no-repeat;
+}
+
+a.shareLink:hover {
+	background: url('shareBtn.png') -38px -23px no-repeat;
+}
+
+a.shareLinkBox {
+	position: absolute;
+	float: left;
+	background-color: blue;
+	width: 50px;
+	height: 20px;
+	display: none;
 }

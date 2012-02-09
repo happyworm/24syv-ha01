@@ -36,6 +36,7 @@
   <script type="text/javascript" src="js/mod.csstransforms.min.js"></script>
   <script type="text/javascript" src="js/popcorn.js"></script> 
   <script type="text/javascript" src="js/popcorn.transcript.js"></script>
+  <script type="text/javascript" charset="utf-8" src="http://bit.ly/javascript-api.js?version=latest&login=prsnd&apiKey=R_4433158d6d119b203adf1a104afb7805"></script>
   
   <script type="text/javascript">
   $(document).ready(function(){    
@@ -63,8 +64,7 @@
 		//var url = "http://arkiv.radio24syv.dk/v.ihtml" + noStartUrl(location.search)
 		var newUrl = url + '&start=' + linkTime;
 
-		$('.shareFacebook').attr('href', 'http://www.facebook.com/sharer.php?u=' + encodeURIComponent(newUrl) +'&t=Anbefaling af radio24syv" target="_blank"><img src="" />');
-		$('.shareTweet').attr('href', 'http://twitter.com/share?url=' +  encodeURIComponent(newUrl));
+		BitlyClient.shorten(newUrl, 'BitlyCB.shortenResponse');		
 
 		return newUrl;
 	}
@@ -151,6 +151,9 @@
 		// Seeked
 
 		$('#jquery_jplayer_1').bind($.jPlayer.event.seeked, function(event){	
+			$('a.shareBox').show('slow');
+			$('p.shareBox').hide('slow');
+			$('.shareTime').html('');
 
 			a = event.jPlayer.status.currentTime; //Sets starttime
 			time = parseInt(a);
@@ -160,15 +163,20 @@
 
 			currentTimeFormated = $.jPlayer.convertTime(time);
 			$('.shareTime').text(currentTimeFormated);
-			
+
 			generateShareUrl(time);
 		});
+
 	
-		// Share from timeline - icon click listeners
-			// Facebook
-		$('.shareFacebook').click(function(event){
-			var width  = 575,
-				height = 400,
+	// Share Link
+		$('.shareLink').click(function(event){
+			$('.shareBox').toggle('slow');
+		});
+	
+	// Share from timeline - icon click listeners
+		$('.sharePopup').click(function(event){
+			var width  = 650,
+				height = 300,
 				left   = ($(window).width()  - width)  / 2,
 				top    = ($(window).height() - height) / 2,
 				url    = this.href,
@@ -178,29 +186,27 @@
 						 ',top='    + top    +
 						 ',left='   + left;
 
-			window.open(url, 'share on facebook', opts);
+			window.open(url, ' ', opts);
 
 			return false;
 		});
-
-			// Twitter
-		$('.shareTweet').click(function(event){    
-			var width  = 575,
-				height = 400,
-				left   = ($(window).width()  - width)  / 2,
-				top    = ($(window).height() - height) / 2,
-				url    = this.href,
-				opts   = 'status=1' +
-						 ',width='  + width  +
-						 ',height=' + height +
-						 ',top='    + top    +
-						 ',left='   + left;
+		
+	// Bit.ly API
+		BitlyCB.shortenResponse = function(data) {
+			var sss = '';
+			var first_result;
+			// Results are keyed by longUrl, so we need to grab the first one.
+			for (var r in data.results) {
+				first_result = data.results[r]; break;
+			}
+			sss = String(first_result["shortUrl"]);
 			
-			window.open(url, 'twitter', opts);
+			$('.shareFacebook').attr('href', 'http://www.facebook.com/sharer.php?u=' + sss +'&t=Anbefaling af radio24syv" target="_blank"><img src="skin/24syv-logo.png" />');
+			$('.shareTweet').attr('href', 'http://twitter.com/share?url=' +  sss);
+			$('p.shareBox').html(sss);
 
-			return false;
-		});
-
+			console.log(sss);
+		}
 
     // transcript links to audio
 
@@ -369,11 +375,13 @@
 				<div class="jp-progress-image">
 					<div class="jp-progress">
 						  <div class="jp-play-bar"></div>
-								<div class="shareBar">
-									<div class="shareTime"></div>
-										<a class="shareFacebook shareBox" href=""></a>
-										<a class="shareTweet shareBox" href=""></a>
-								</div>
+							<div class="shareBar">
+								<div class="shareTime"></div>
+								<a class="shareFacebook sharePopup shareBox" href=""></a>
+								<a class="shareTweet sharePopup shareBox" href=""></a>
+								<a class="shareLink shareBox" href="#"></a>
+								<p class="shareBox"></p>
+							</div>
 							<div class="jp-play-head">
 							<div class="jp-current-time"></div></div>
 					</div>
