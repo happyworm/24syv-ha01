@@ -308,7 +308,7 @@
         var tweetScript = '<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></'+'script><a data-url="" data-text="'+sharecontent+'" href="http://twitter.com/share?url=x" class="twitter-share-button">Tweet</a>';
         $('#tweet-like').append(tweetScript);  
         var fbScript = '<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></'+'script> <a href="http://www.facebook.com/sharer.php?u='+encodeURIComponent(url)+'&t='+encodeURIComponent(fullShareable)+'" name="fb_share" share_url="'+url+'?s='+s+'&e='+e+'"></a>';
-        $('#facebook-share').append(fbScript); 
+        $('#facebook-share').append(fbScript);
 
         function googlePlusShare(url, content) {
           var w=480;
@@ -409,7 +409,7 @@
         </div>
 
         <div id="googleplus-share">
-          <a id="googleplus-button" href="#" style="display:none">Google Plus Share</a>
+          <a id="googleplus-button" href="#" style="display:none;"><img src="skin/+1.png" height="20px"/></a>
         </div>
 
 
